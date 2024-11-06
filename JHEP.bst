@@ -273,7 +273,7 @@ FUNCTION {format.names}
 	    }
 	  if$
 	}
-	nameptr #100 >
+	nameptr #5 >
 	  { #0 'namesleft :=
 	    "others" 't :=
 	    't
