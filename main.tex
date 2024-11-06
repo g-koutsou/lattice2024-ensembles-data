@@ -2,42 +2,241 @@
 % data according to the instructions in PoSauthmanual.pdf
 \documentclass[a4paper,11pt]{article}
 \usepackage{pos}
+\usepackage{lineno}[pagewise]
+\usepackage{forloop}
+\usepackage[para]{footmisc}
+
+\NewDocumentCommand\Nf{mggg}{$N_{\textrm{f}}\text{=}#1\IfNoValueTF{#2}{}{\text{+}#2}\IfNoValueTF{#3}{}{\text{+}#3}\IfNoValueTF{#4}{}{\text{+}#4}$}
+\NewDocumentCommand\vol{mg}{#1\textsuperscript{3}\IfNoValueTF{#2}{}{$\times$#2}}
+
+\newcounter{linecounter}
+\newenvironment{emptylines}[1]{
+  \begin{linenumbers}[1]
+    \forloop{linecounter}{1}{\value{linecounter} < #1}{
+      \quad\\
+    }
+  \end{linenumbers}
+}{}
 
 \title{Lattice gauge ensembles and data management}
-\ShortTitle{LQCD data}
 
-\author[a]{Y.~Aoki}       \affiliation[a]{RIKEN Center for Computational Science (R-CCS), Kobe, 650-0047, Japan}
-\author[b]{E.~Bennett}    \affiliation[b]{Swansea Academy of Advanced Computing, Swansea University, Bay Campus, Fabian Way, Swansea SA18EN, United Kingdom}
-\author[c]{R.~Bignell}    \affiliation[c]{School of Mathematics, Trinity College, Dublin, Ireland}
-\author[d]{K.~U.~Can}     \affiliation[d]{CSSM, Department of Physics, The University of Adelaide, Adelaide SA, 5005, Australia}
-\author[e]{T.~Doi}        \affiliation[e]{Interdisciplinary Theoretical and Mathematical Sciences Program (iTHEMS), RIKEN, Wako, 351-0198, Japan}
-\author[f]{S.~Gottlieb}   \affiliation[f]{Department of Physics, Indiana University, Bloomington, IN 47405, USA}
-\author[g]{R.~Gupta}      \affiliation[g]{Theoretical Division, Los Alamos National Laboratory, Los Alamos, NM 87545, USA}
-\author[h]{G.~von Hippel} \affiliation[h]{PRISMA+ Cluster of Excellence and Institut f\"ur Kernphysik}
-\author[a]{I.~Kanamori}   
-\author[i]{A.~Kotov}      \affiliation[i]{J\"ulich Supercomputing Center, Forschungszentrum J\"ulich, Wilhelm-Johnen-Stra\ss{}e, D-54245 J\"ulich, German}
-\author[j]{G.~Koutsou}    \affiliation[j]{Computation-based Science and Technology Research Center, The Cyprus Institute, 20 Konstantinou Kavafi Str., 2121, Nicosia Cyprus}
-\author[k]{R.~Mawhinney}  \affiliation[k]{Physics Department, Columbia University, New York, New York 10027, USA}
-\author[l]{A.~Patella}    \affiliation[l]{Humboldt Universit\"at zu Berlin, Institut f\"ur Physik \& IRIS Adlershof, Zum Grossen Windkanal 6, 12489 Berlin, Germany}
-\author[i]{G.~Pederiva}   
-\author[m]{C.~Schmidt}    \affiliation[m]{Fakult\"at f\"ur Physik, Universit\"at Bielefeld, D-33615 Bielefeld, Germany}
-\author[n]{T.~Yamazaki}   \affiliation[n]{Institute of Pure and Applied Sciences, University of Tsukuba, Tsukuba 305-8571, Japan}
-\author[o]{Y.-B.~Yang}    \affiliation[o]{School of Physical Sciences, University of Chinese Academy of Sciences, Beijing 100049, People's Republic of China}
+\author[a,\#]{Y.~Aoki}       \affiliation[a]{RIKEN Center for Computational Science (R-CCS), Kobe, 650-0047, Japan}
+\author[b,1]{E.~Bennett}     \affiliation[b]{Swansea Academy of Advanced Computing, Swansea University, United Kingdom}
+\author[c,2]{R.~Bignell}     \affiliation[c]{School of Mathematics, Trinity College, Dublin, Ireland}
+\author[d,3]{K.~U.~Can}      \affiliation[d]{CSSM, Department of Physics, The University of Adelaide, Australia}
+\author[e,4]{T.~Doi}         \affiliation[e]{Interdisciplinary Theoretical and Mathematical Sciences Program (iTHEMS), RIKEN, Japan}
+\author[f,5]{S.~Gottlieb}    \affiliation[f]{Department of Physics, Indiana University, IN, USA}
+\author[g,6]{R.~Gupta}       \affiliation[g]{Theoretical Division, Los Alamos National Laboratory, NM, USA}
+\author[h,7]{G.~von Hippel}  \affiliation[h]{PRISMA+ Cluster of Excellence and Institut f\"ur Kernphysik}
+\author[a,8]{I.~Kanamori}   
+\author[i,9]{A.~Kotov}       \affiliation[i]{J\"ulich Supercomputing Center, Forschungszentrum J\"ulich, Germany}
+\author[j,10,\#]{G.~Koutsou} \affiliation[j]{Computation-based Science and Technology Research Center, The Cyprus Institute, Cyprus}
+\author[k,11]{R.~Mawhinney}  \affiliation[k]{Physics Department, Columbia University, USA}
+\author[l,12]{A.~Patella}    \affiliation[l]{Humboldt Universit\"at zu Berlin, Institut f\"ur Physik \& IRIS, Germany}
+\author[i,13]{G.~Pederiva}   
+\author[m,14]{C.~Schmidt}    \affiliation[m]{Fakult\"at f\"ur Physik, Universit\"at Bielefeld, Germany}
+\author[n,15]{T.~Yamazaki}   \affiliation[n]{Institute of Pure and Applied Sciences, University of Tsukuba, Japan}
+\author[o,16]{Y.-B.~Yang}    \affiliation[o]{School of Physical Sciences, University of Chinese Academy of Sciences, Beijing, China}
 
-\emailAdd{g.koutsou@cyi.ac.cy}
+\note[1]{For the TELOS collaboration}
+\note[2]{For the FASTSUM collaboration}
+\note[3]{For the CSSM/QCDSF/UKQCD collaboration}
+\note[4]{For the HAL QCD collaboration}
+\note[5]{For the MILC collaboration}
+\note[6]{For the Jlab/W\&M/LANL/MIT/Marseille effort}
+\note[7]{For the CLS}
+\note[8]{For the JLQCD collaboration}
+\note[9]{For the TWEXT collaboration}
+\note[10]{For the ETM collaboration (ETMC)}
+\note[11]{For the RBC-UKQCD collaboration}
+\note[12]{For the RC* collaboration}
+\note[13]{For the OPEN LAT initiative}
+\note[14]{For the HotQCD collaboration}
+\note[15]{For the PACS collaboration}
+\note[16]{For the CLQCD collaboration}
 
-\abstract{Abstract}
+\note[\#]{Conveners}
+
+%\emailAdd{g.koutsou@cyi.ac.cy}
+
+\abstract{We summarize the status of lattice QCD ensemble generation
+  efforts and their data management characteristics. Namely, this
+  proceeding summarizes contributions to a dedicated parallel session
+  during the 41\textsuperscript{st} International Symposium on Lattice
+  Field Theory (Lattice 2024), during which representatives of 16
+  lattice QCD collaborations provided details on their simulation
+  program, with focus on plans for publication, data management, and
+  storage requirements. The parallel session was organized by the
+  International Lattice Data Grid (ILDG), following an open call to
+  the lattice QCD for participation in the session.}
+
 
 \FullConference{The 41st International Symposium on Lattice Field
   Theory (LATTICE2024)\\ 28 July - 3 August 2024\\ Liverpool, UK\\}
 
-%% \tableofcontents
+\tableofcontents
 
 \begin{document}
 \maketitle
 
 \section{Introduction}
-This proceeding updates Ref.~\cite{Bali:2022mlg}.
+The simulation of Quantum Chromodynamics (QCD) via its Eucledean-time,
+discrete formulation on a lattice, has been one of the most
+compute-intensive applications in scientific computing, consuming
+substantial fractions of computer time at leadership HPC facilities
+internationally. In particular, the generation of ensembles of gauge
+configurations, for multiple values of the QCD parameters such as the
+QCD coupling, the quark masses, and the extent of the finite volume,
+requires multi-year simulation campaigns, coordinated by multi-member
+research collaborations. It is thus common that collaborations store
+and reuse the same gauge ensembles for multiple observables of
+interest, and in many cases also share the ensembles with researchers
+external to the collaboration that generated them.
+
+The purpose of this proceeding is to summarize the available gauge
+ensembles generated by various lattice QCD collaborations
+internationally, with a focus on the data management practices each
+collaboration employs. It follows a parallel session at the
+41\textsuperscript{st} International Symposium on Lattice Field Theory
+(Lattice 2024), during which representatives of 16 collaborations
+provided status reports of their simulation efforts, responding to an
+open call for participation addressed to the lattice QCD community
+prior to the conference. The first such session was during Lattice
+2022 and a report of the contributions can be found in
+Ref.~\cite{Bali:2022mlg}.
+
+The lattice community realized early on the value in standardizing the
+marking-up of gauge ensembles, and initiated the International Lattice
+Data Grid
+(ILDG)~\cite{Davies:2002mu,Yoshie:2008aw,Maynard:2009szr,Beckett:2009cb}
+in the early 2000s. ILDG is organized as a federation of autonomous
+\textit{regional grids}, within a single Virtual
+Organization~\cite{ildg-organization}. It standardizes interfaces for
+the services, which are to be operated by each regional grid, such as
+storage and a searchable metadata catalog, so that the regional
+services are interoperable. Within ILDG, working groups specify
+community-wide agreed metadata schemas
+(QCDml)~\cite{Coddington:2007gz} to concisely mark-up the gauge
+configurations and develop relevant middleware tools for facilitating
+the use of ILDG services. The middleware and metadata specifications
+developed by ILDG adhere to most of the FAIR (Findable, Accessible,
+Interoperable, Reusable) principles~\cite{Wilkinson2016}. A summary of
+recent developments in ILDG, referred to as ILDG 2.0, was presented
+during the same session and can be found in a separate
+proceeding~\cite{ILDG2}.
+
+In the remainder of this proceeding, we present the status of ensemble
+generation of each of the 16 collaborations that contributed to the
+parallel session. We restrict to simulations of QCD, and at present
+these are carried out using \Nf{2}{1}, \Nf{2}{1}{1}, and
+\Nf{1}{1}{1}{1} sea quark flavors with various fermion
+discretizations. The individual contributions are followed by a brief
+summary.
+
+\section{Contributions}
+The contributions from each collaboration follow, in the order
+presented during the parallel session. The original presentations can
+be found on the conference website~\cite{parallel-session}.
+
+\newpage
+\subsection{CLQCD}
+\emptylines{19}
+
+\subsection{Jlab/W\&M/LANL/MIT/Marseille}
+\emptylines{19}
+
+\subsection{HotQCD}
+\emptylines{19}
+
+\subsection{FASTSUM}
+\emptylines{19}
+
+\subsection{TELOS}
+\emptylines{19}
+
+\subsection{HAL QCD}
+\emptylines{19}
+
+\subsection{TWEXT}
+\emptylines{19}
+
+\subsection{CSSM/QCDSF/UKQCD}
+\emptylines{19}
+
+\subsection{RBC-UKQCD}
+\emptylines{19}
+
+\subsection{OPEN LAT}
+\emptylines{19}
+
+\subsection{RC*}
+\emptylines{19}
+
+\subsection{ETMC}
+\begin{linenumbers}[1]
+The ETM collaboration focuses on hadron spectroscopy, hadron
+structure, and flavor physics at zero temperature. Ensembles employ
+the twisted mass formulation, realizing $\mathcal{O}(a)$-improvement
+by tuning to maximal twist, and include a clover term to further
+reduce the size of lattice artifacts. The Iwasaki gauge action is
+used. The main simulation effort is for the generation of ensembles
+with degenerate up- and down-, strange- and charm-quarks
+(\Nf{2}{1}{1}) with lattice spacing ranging between $0.049$ and
+$0.091$~fm. $M_\pi\cdot L$ varies from $2.5$ up to ${\sim}5.5$. At the
+time of writing, 24 ensembles are available or in the process of being
+generated, with 8 of these at approximately physical values of the
+quark masses. For a recent listing of the ensembles,
+see~\cite{ETMCPoster:2024}. Simulations are performed using the Hybrid
+Monte Carlo (HMC) algorithm implemented in the tmLQCD software
+package~\cite{Jansen:2009xp,Deuzeman:2013xaa,Abdel-Rehim:2013wba}. See
+Ref.~\cite{Alexandrou:2018egz} for details on the simulation program,
+including the parameter tuning. The
+DD-$\alpha$AMG~\cite{Frommer:2013fsa,Alexandrou:2016izb} multigrid
+iterative solver is employed for the most poorly conditioned monomials
+in the light sector while mixed-precision CG is used
+elsewhere. Multi-shift CG is used together with shift-by-shift
+refinement using DD-$\alpha$AMG~\cite{Alexandrou:2018wiv} for a number
+of small shifts for the heavy sector. tmLQCD has interfaces to
+QPhiX~\cite{Joo:2013lwm} and QUDA~\cite{Clark:2009wm,Babich:2011np}.
+tmLQCD automatically writes gauge configurations in the ILDG format,
+with meta-data including creation date, target simulation parameters,
+and the plaquette. ETMC policy is to make ensembles publicly
+available after a grace period. Older \Nf{2} and \Nf{2}{1}{1}
+ensembles~\cite{Baron:2010bv,EuropeanTwistedMass:2010voq,ETM:2009ztk}
+have made use of ILDG storage elements. The current ensembles are
+available upon request and the collaboration intends to use ILDG in
+the near future. For these ensembles, we expect storage requirements
+to reach 3~PB.
+\end{linenumbers}
+
+\subsection{JLQCD}
+\emptylines{19}
+
+\subsection{MILC}
+\emptylines{19}
+
+\subsection{CLS}
+\emptylines{19}
+
+\subsection{PACS}
+\emptylines{19}
+
+\section{Summary}
+
+\acknowledgments GK acknowledges support from EXCELLENCE/0421/0195,
+co-financed by the European Regional Development Fund and the Republic
+of Cyprus through the Research and Innovation Foundation and the
+AQTIVATE a Marie Sk\l{}odowska-Curie Doctoral Network
+GA~No.~101072344.
+
+The participating collaborations acknowledge the following HPC
+systems, for the generation of the gauge ensembles reported here,
+LUMI-C and LUMI-G at CSC in Finland, JUWELS and JUWELS-Booster at
+Jülich Supercomputing Centre (JSC), SuperMUC and SuperMUC-NG at
+Leibniz Rechenzentrum (LRZ) in Garching, Leonardo at CINECA in
+Bologna, Italy, and Frontera at TACC, TX, US.
+
+
 
 \bibliographystyle{JHEP}
 \bibliography{refs}
