@@ -327,7 +327,8 @@
     % running headers on all other pages
     \smash{\vbox{\hsize=\textwidth\noindent
 	    \ifshorttitle{\small\it\@shorttitle}\else{\small\it\@title}\fi\hfill
-	    \printHeadAuthors\vskip.17em \hrule }}%
+	 %   \printHeadAuthors
+     \vskip.17em \hrule }}%
     \fi}%
   \let\@mkboth\@gobbletwo  %%%%
   \let\sectionmark\@gobble
