@@ -82,7 +82,7 @@
 \maketitle
 
 \section{Introduction}
-The simulation of Quantum Chromodynamics (QCD) via its Eucledean-time,
+The simulation of Quantum Chromodynamics (QCD) via its Euclidean-time,
 discrete formulation on a lattice, has been one of the most
 compute-intensive applications in scientific computing, consuming
 substantial fractions of computer time at leadership HPC facilities
@@ -152,12 +152,16 @@ be found on the conference website~\cite{parallel-session}.
 
 \subsection{Jlab/W\&M/LANL/MIT/Marseille}
 \emptylines{19}
-
+\newpage
 \subsection{HotQCD}
 \emptylines{19}
 
 \subsection{FASTSUM}
-\emptylines{19}
+The FASTSUM collaboration use \Nf{2}{1} flavour anisotropic gauge ensembles in the fixed-scale approach to study the behaviour of QCD as a function of temperature in hadronic and plasma phases. Specifically we have considered the behaviour of hadronic states including light, strange, charm and bottom quarks, the electrical conductivity of QCD matter, the interquark potential and properties of the chiral transition. % The fixed-scale approach allows for a conceptually clear investigation of temperature effects while anisotropy allows more temporal points at each temperature.
+FASTSUM gauge fields utilise an $\mathcal{O}\left(a^2\right)$ improved Symanzik gauge action and an $\mathcal{O}\left(a\right)$ improved spatially stout-smeared Wilson-Clover action following the parameter tuning and zero-temperature ensembles of the Hadron Spectrum collaboration~\cite{Edwards:2008ja,HadronSpectrum:2008xlg}. ``Generation 2'' ensembles were generated using the Chroma~\cite{Edwards:2004sx} software suite while the newer ``Generation 2L'' used a modfication~\cite{glesaaen_jonas_rylund_2018_2216355} of the {\sc openQCD}~\cite{Luscher:2012av,openqcd} package which introduces stout-link smearing and anisotropic actions. Generation 2 and 2L have an anisotropy $\xi = a_s/a_\tau \sim 3.5$ with $a_s\sim 0.12$ fm, $N_s = 24$ or $32$ and a wide range of $N_\tau$ corresponding to $T \in[44,760]$ MeV. %``Generation 2'' and ``Generation 2L'' differ mainly in their quark mass.
+Full details of these ensembles may be found in Refs.~\cite{Aarts:2014nba,Aarts:2020vyb}. We are in the process of production for ``Generation 3'' - a parameter set similar to ``Generation 2'' but with twice the anistropy $\xi \sim 7$ - using {\sc openQCD-FASTSUM}~\cite{glesaaen_jonas_rylund_2018_2216355}. %As we use a derivative of the {\sc openQCD} package log, files include information such as the {\sc openQCD} version, algorithmic parameters, plaquette values and the run time. Additionally
+We maintain a centralised metadata repository detailing (among other information) who was responsible for each run, on which machine that run was produced and where copies may be found. The gauge fields are redundantly stored on two (well-separated) storage servers managed by Swansea University in the openQCD format. The ``Generation 2'' ensembles are publically available~\cite{aarts_2024_8403827} while other ensembles will be available after an embargo period. We anticipate making ensembles available through the next incarnation of the ILDG with supplementary information also available on Zenodo~\cite{zenodo,aarts_2024_8403827}.
+%\emptylines{19}
 
 \subsection{TELOS}
 
@@ -267,7 +271,7 @@ ongoing analysis.
 
 \subsection{OPEN LAT}
 \emptylines{19}
-
+\newpage
 \subsection{RC*}
 \emptylines{19}
 
@@ -331,23 +335,23 @@ to reach 3~PB.
   }
   \centering
   \begin{tabular}{lccrrr}\hline\hline
-    Collaboration                & Public & ILDG & \#ens & \#cfg & Storage (TB) \\\hline
-    CLQCD                        &        &      &       &       &              \\
-    Jlab/W\&M/LANL/MIT/Marseille &        &      &       &       &              \\
-    HotQCD                       &        &      &       &       &              \\
-    FASTSUM                      &        &      &       &       &              \\
-    TELOS                        &    1   &  P   &  250  & 800,000 & 120            \\
-    HAL QCD                      &        &      &       &       &              \\
-    TWEXT                        &    1   &  P   &  80   &70,000 &  80          \\
-    CSSM/QCDSF/UKQCD             &        &      &       &       &              \\
-    RBC-UKQCD                    &        &      &       &       &              \\
-    OPEN LAT                     &        &      &       &       &              \\
-    RC*                          &        &      &       &       &              \\
-    ETMC                         &    1   &  P,U &  24   &12,000 & 3,000        \\
-    JLQCD                        &        &      &       &       &              \\
-    MILC                         &        &      &       &       &              \\
-    CLS                          &        &      &       &       &              \\
-    PACS                         &        &      &       &       &              \\\hline\hline
+    Collaboration                & Public & ILDG & \#ens & \#cfg   & Storage (TB) \\\hline
+    CLQCD                        &        &      &       &         &              \\
+    Jlab/W\&M/LANL/MIT/Marseille &        &      &       &         &              \\
+    HotQCD                       &        &      &       &         &              \\
+    FASTSUM                      & 2,1    & I    & 37    & 37,000  & 65           \\
+    TELOS                        & 1      & P    & 250   & 800,000 & 120          \\
+    HAL QCD                      &        &      &       &         &              \\
+    TWEXT                        & 1      & P    & 80    & 70,000  & 80           \\
+    CSSM/QCDSF/UKQCD             &        &      &       &         &              \\
+    RBC-UKQCD                    &        &      &       &         &              \\
+    OPEN LAT                     &        &      &       &         &              \\
+    RC*                          &        &      &       &         &              \\
+    ETMC                         & 1      & P,U  & 24    & 12,000  & 3,000        \\
+    JLQCD                        &        &      &       &         &              \\
+    MILC                         &        &      &       &         &              \\
+    CLS                          &        &      &       &         &              \\
+    PACS                         &        &      &       &         &              \\\hline\hline
   \end{tabular}
 \end{table}
 
@@ -356,26 +360,31 @@ to reach 3~PB.
 co-financed by the European Regional Development Fund and the Republic
 of Cyprus through the Research and Innovation Foundation and the
 AQTIVATE a Marie Sk\l{}odowska-Curie Doctoral Network
-GA~No.~101072344.
-The work of EB is part-funded by
-the UKRI Science and Technology Facilities Council (STFC)
-Research Software Engineer Fellowship EP/V052489/1,
-the UKRI Engineering and Physical Science Research Council (EPSRC)
-ExCALIBUR programme ExaTEPP project EP/X017168/1,
-and the STFC Consolidated Grant ST/T000813/1.
+GA~No.~101072344.  RB acknowledges support from a Science Foundation
+Ireland Frontiers for the Future Project award with grant number
+SFI-21/FFP-P/10186. The work of EB is part-funded by the UKRI Science
+and Technology Facilities Council (STFC) Research Software Engineer
+Fellowship EP/V052489/1, the UKRI Engineering and Physical Science
+Research Council (EPSRC) ExCALIBUR programme ExaTEPP project
+EP/X017168/1, and the STFC Consolidated Grant ST/T000813/1.
 
 The participating collaborations acknowledge the following HPC
-systems, for the generation of the gauge ensembles reported here,
-LUMI-C and LUMI-G at CSC in Finland,
-JUWELS and JUWELS-Booster at
-Jülich Supercomputing Centre (JSC),
-SuperMUC and SuperMUC-NG at
-Leibniz Rechenzentrum (LRZ) in Garching,
-Leonardo at CINECA in Bologna, Italy,
-Supercomputing Wales, supported by the European Regional Development Fund via the Welsh Government,
-the DiRAC Extreme Scaling and Data Intensive services, which are part of the UKRI Digital Research Infrastructure,
-and
-Frontera at TACC, TX, US\@.
+systems, for the generation of the gauge ensembles reported here,\par
+LUMI-C and LUMI-G at CSC, Finland,\par Irène Joliot-Curie at Très
+Grand Centre de Calcul (TGCC) in Bruyères-le-Châtel, France,\par
+JUGENE, JUWELS and JUWELS-Booster at Jülich Supercomputing Centre
+(JSC),\par HAWK at Höchstleistungsrechenzentrum Stuttgart (HLRS),
+Germany,\par SuperMUC and SuperMUC-NG at Leibniz Rechenzentrum (LRZ)
+in Garching, Germany,\par Kay and Stokes at the Irish Centre for
+High-End Computing (ICHEC) in Galway, Ireland,\par Leonardo, Marconi
+100 and Marconi A2 at CINECA in Bologna, Italy,\par Tesseract at the
+DiRAC Extreme Scaling Service at the University of Edinburgh, United
+Kingdom,\par DiRAC Data Intensive 2.5 \& 3 at the University of
+Leicester, United Kingdom,\par Sunbird of Supercomputing Wales,
+supported by the European Regional Development Fund via the Welsh
+Government,\par and Frontera at TACC, TX, US,\par the DiRAC Extreme
+Scaling and Data Intensive services, which are part of the UKRI
+Digital Research Infrastructure,
 
 \bibliographystyle{JHEP}
 \bibliography{refs}
