@@ -42,7 +42,7 @@
 
 \note[1]{For the TELOS collaboration}
 \note[2]{For the FASTSUM collaboration}
-\note[3]{For the CSSM/QCDSF/UKQCD collaboration}
+\note[3]{For the QCDSF collaboration}
 \note[4]{For the HAL QCD collaboration}
 \note[5]{For the MILC collaboration}
 \note[6]{For the Jlab/W\&M/LANL/MIT/Marseille effort}
@@ -288,8 +288,53 @@ configurations public/use ILDG in the future, after performing the
 ongoing analysis.
 \end{linenumbers}
 
-\subsection{CSSM/QCDSF/UKQCD}
-\emptylines{19}
+\subsection{QCDSF}
+The main focus of the QCDSF collaboration is hadron spectrum and
+structure at zero temperature.
+%
+%
+Our ensembles are generated using the Symanzik improved gauge action
+and Stout Link Non-perturbative Clover (SLiNC) fermion action, for
+which the link variables appearing in the Dirac term are stout
+smeared, while the links in the clover term are
+not~\cite{Cundy:2009yy}. The clover coefficient is determined
+non-perturbatively.
+%
+Our most recent set of ensembles are $2+1$-flavour, which cover pion
+masses ranging $m_\pi^{phys} \lesssim m_\pi \lesssim 470 \; {\rm
+  MeV}$, and 5 lattice spacings in between $a = 0.052 - 0.082 \; {\rm
+  fm}$ (inclusive).
+%
+In total, there are 22 ensembles available and an additional 2 at
+almost-physical pion mass still being generated. A recent listing of
+available ensembles can be found in~\cite{QCDSFUKQCDCSSM:2023qlx}.
+%
+Our approach to the physical point follows the $\bar m^R = (2m_\ell^R
++ m_s^R)/3 = const$ line~\cite{Bietenholz:2011qq}, i.e. we start from
+the SU(3) symmetric point where the renormalized masses of strange
+$(m_s^R)$ and light quarks $(m_\ell^R)$ are equal to each other,
+$m_s^R = m_\ell^R = \bar m^R/3$ and we increase $m_s^R$ as $m_\ell^R$
+decreases.
+%
+%
+The BQCD software suite~\cite{Haar:2017ubh} is used to generate the
+ensembles, utilising the hybrid Monte Carlo (HMC) and rational HMC
+algorithms.
+%
+%
+All of our gauge configurations are stored in the ILDG format with
+metadata compliant with the ILDG scheme. We have made use of ILDG
+storage systems before, where the hub at the CSSM, Adelaide served as
+one of the regional grids, and some older configurations are still
+stored in the ILDG servers.
+%
+%
+The QCDSF collaboration kindly asks any prospective users to contact
+the collaboration before utilizing these configurations for their
+projects. We plan to make newly generated ensembles available upon
+request through ILDG, pending the collaboration's confirmation. QCDSF
+is open to new collaborative projects.
+
 
 \subsection{RBC-UKQCD}
 \emptylines{19}
@@ -431,14 +476,14 @@ reweighting factors are included in the Config XML.
     TELOS                        & 1      & P    & 250   & 800,000 & 120          \\
     HAL QCD                      &        &      &       &         &              \\
     TWEXT                        & 1      & P    & 80    & 70,000  & 80           \\
-    CSSM/QCDSF/UKQCD             &        &      &       &         &              \\
+    QCDSF                        & 1      & P,U  & 24    & 20,000  & 55           \\
     RBC-UKQCD                    &        &      &       &         &              \\
     OPEN LAT                     &        &      &       &         &              \\
     RC*                          &        &      &       &         &              \\
     ETMC                         & 1      & P,U  & 24    & 12,000  & 3,000        \\
     JLQCD                        &        &      &       &         &              \\
     MILC                         & 1      & I    & 50    & 70,000  & 600          \\
-    CLS                          & 1      & P,U  & 25    &150,000  & 1,400        \\
+    CLS                          & 1      & P,U  & 25    & 150,000 & 1,400        \\
     PACS                         &        &      &       &         &              \\\hline\hline
   \end{tabular}
 \end{table}
@@ -456,13 +501,14 @@ Software Engineer Fellowship EP/V052489/1, the UKRI Engineering and
 Physical Science Research Council (EPSRC) ExCALIBUR programme ExaTEPP
 project EP/X017168/1, and the STFC Consolidated Grant
 ST/T000813/1. Y.-B.~Y. is supported in part by NSFC grants
-No.~12293060, and~12435002.
+No.~12293060, and~12435002. K.~U.~C. is supported by the Australian
+Research Council grant DP190100297, DP220103098 and DP240102839
 
 
-The participating collaborations acknowledge the following HPC
-systems, for the generation of the gauge ensembles reported here,\par
-LUMI-C and LUMI-G at CSC, Finland,\par Irène Joliot-Curie at Très
-Grand Centre de Calcul (TGCC) in Bruyères-le-Châtel, France,\par
+The participating collaborations acknowledge the following HPC systems
+and HPC sites, for the generation of the gauge ensembles reported
+here,\par LUMI-C and LUMI-G at CSC, Finland,\par Irène Joliot-Curie at
+Très Grand Centre de Calcul (TGCC) in Bruyères-le-Châtel, France,\par
 JUGENE, JUWELS and JUWELS-Booster at Jülich Supercomputing Centre
 (JSC),\par HAWK at Höchstleistungsrechenzentrum Stuttgart (HLRS),
 Germany,\par SuperMUC and SuperMUC-NG at Leibniz Rechenzentrum (LRZ)
@@ -476,9 +522,15 @@ supported by the European Regional Development Fund via the Welsh
 Government,\par the HPC Cluster of ITP-CAS, the Southern Nuclear
 Science Computing Center (SNSC),\par Siyuan-1 cluster, supported by
 the Center for High Performance Computing at Shanghai Jiao Tong
-University,\par Frontera at TACC, TX, US,\par and the DiRAC Extreme
-Scaling and Data Intensive services, which are part of the UKRI
-Digital Research Infrastructure.
+University, \par Frontera at TACC, TX, US,\par Cambridge Service for
+Data Driven Discovery (CSD3),\par the North-German Supercomputer
+Alliance (HLRN),\par the National Computer Infrastructure (NCI
+National Facility in Canberra, Australia supported by the Australian
+Commonwealth Government),\par the Pawsey Supercomputing Centre, which
+is supported by the Australian Government and the Government of
+Western Australia, \par and the DiRAC Extreme Scaling and Data
+Intensive services, which are part of the UKRI Digital Research
+Infrastructure.
 
 
 \bibliographystyle{JHEP}
