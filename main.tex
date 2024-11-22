@@ -38,7 +38,7 @@
 \author*[i,13]{Giovanni Pederiva}   
 \author*[m,14]{Christian Schmidt}    \affiliation[m]{Fakult\"at f\"ur Physik, Universit\"at Bielefeld, Germany}
 \author*[n,15]{Takeshi Yamazaki}   \affiliation[n]{Institute of Pure and Applied Sciences, University of Tsukuba, Japan}
-\author*[o,16]{Yi-Bo~Yang}    \affiliation[o]{School of Physical Sciences, University of Chinese Academy of Sciences, Beijing, China}
+\author*[o,16]{Yi-Bo~Yang}    \affiliation[o]{CAS Key Laboratory of Theoretical Physics, Institute of Theoretical Physics, Chinese Academy of Sciences, Beijing 100190, China}
 
 \note[1]{For the TELOS collaboration}
 \note[2]{For the FASTSUM collaboration}
@@ -148,7 +148,32 @@ be found on the conference website~\cite{parallel-session}.
 
 \newpage
 \subsection{CLQCD}
-\emptylines{19}
+
+The CLQCD collaboration focuses on the first principles QCD study of
+the spectrum of exotic hadrons, parton structure of the nucleon, and
+other traditional hadron, N-point correlation functions related to
+high accuracy tests of the standard model, and also QCD in extreme
+conditions. For this purpose, CLQCD generated a set of configurations
+of \Nf{2}{1} fermions using the tadpole improved clover fermion action
+with stout smearing and the tadpole improved Symanzik gauge action, at
+5 values of the lattice spacing $\in[0.05,0.11]$~fm, several pion
+masses $\in[120, 350]$~MeV, several volumes with
+$m_{\pi}L\in[2.6,5.8]$~fm, and several temperatures
+$\in(0,464]$~MeV. In addition, there are several anisotropic ensembles
+  using clover fermions with $\xi=5$ at different lattice spacing,
+  pion mass, volume and flavors which concentrate on the high
+  precision studies related to glueball properties. For the gauge
+  generation the Chroma package~\cite{Edwards:2004sx} with
+  QUDA~\cite{Clark:2009wm,Babich:2011np,Clark:2016rdz} is used at
+  present, and we plan to switch to PyQUDA~\cite{Jiang:2024lto} with
+  QUDA in the near future. Currently the CLQCD collaboration has
+  $\sim$20 ensembles (one ensemble corresponds to one point in the
+  space lattice spacing-spatial volume-pion mass-temperature), which
+  occupy $\sim 100$ TB of disk space. Configurations are stored in the
+  SCIDAC format. Possible collaborations on the analysis of the
+  correlation functions are welcome and CLQCD is preparing the
+  hardware and software for the data sharing service.
+
 
 \subsection{Jlab/W\&M/LANL/MIT/Marseille}
 \emptylines{19}
@@ -399,7 +424,7 @@ reweighting factors are included in the Config XML.
   \centering
   \begin{tabular}{lccrrr}\hline\hline
     Collaboration                & Public & ILDG & \#ens & \#cfg   & Storage (TB) \\\hline
-    CLQCD                        &        &      &       &         &              \\
+    CLQCD                        & 1      & I    & 20    & 10,000  & 100          \\
     Jlab/W\&M/LANL/MIT/Marseille &        &      &       &         &              \\
     HotQCD                       &        &      &       &         &              \\
     FASTSUM                      & 2,1    & I    & 37    & 37,000  & 65           \\
@@ -419,17 +444,20 @@ reweighting factors are included in the Config XML.
 \end{table}
 
 
-\acknowledgments GK acknowledges support from EXCELLENCE/0421/0195,
+\acknowledgments G.~K. acknowledges support from EXCELLENCE/0421/0195,
 co-financed by the European Regional Development Fund and the Republic
 of Cyprus through the Research and Innovation Foundation and the
 AQTIVATE a Marie Sk\l{}odowska-Curie Doctoral Network
-GA~No.~101072344.  RB acknowledges support from a Science Foundation
-Ireland Frontiers for the Future Project award with grant number
-SFI-21/FFP-P/10186. The work of EB is part-funded by the UKRI Science
-and Technology Facilities Council (STFC) Research Software Engineer
-Fellowship EP/V052489/1, the UKRI Engineering and Physical Science
-Research Council (EPSRC) ExCALIBUR programme ExaTEPP project
-EP/X017168/1, and the STFC Consolidated Grant ST/T000813/1.
+GA~No.~101072344.  R.~B. acknowledges support from a Science
+Foundation Ireland Frontiers for the Future Project award with grant
+number SFI-21/FFP-P/10186. The work of E.~B. is part-funded by the
+UKRI Science and Technology Facilities Council (STFC) Research
+Software Engineer Fellowship EP/V052489/1, the UKRI Engineering and
+Physical Science Research Council (EPSRC) ExCALIBUR programme ExaTEPP
+project EP/X017168/1, and the STFC Consolidated Grant
+ST/T000813/1. Y.-B.~Y. is supported in part by NSFC grants
+No.~12293060, and~12435002.
+
 
 The participating collaborations acknowledge the following HPC
 systems, for the generation of the gauge ensembles reported here,\par
@@ -445,9 +473,13 @@ DiRAC Extreme Scaling Service at the University of Edinburgh, United
 Kingdom,\par DiRAC Data Intensive 2.5 \& 3 at the University of
 Leicester, United Kingdom,\par Sunbird of Supercomputing Wales,
 supported by the European Regional Development Fund via the Welsh
-Government,\par and Frontera at TACC, TX, US,\par the DiRAC Extreme
+Government,\par the HPC Cluster of ITP-CAS, the Southern Nuclear
+Science Computing Center (SNSC),\par Siyuan-1 cluster, supported by
+the Center for High Performance Computing at Shanghai Jiao Tong
+University,\par Frontera at TACC, TX, US,\par and the DiRAC Extreme
 Scaling and Data Intensive services, which are part of the UKRI
-Digital Research Infrastructure,
+Digital Research Infrastructure.
+
 
 \bibliographystyle{JHEP}
 \bibliography{refs}
