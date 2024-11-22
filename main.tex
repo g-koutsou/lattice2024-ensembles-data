@@ -22,23 +22,23 @@
 
 \title{Lattice gauge ensembles and data management}
 
-\author[a,\#]{Y.~Aoki}       \affiliation[a]{RIKEN Center for Computational Science (R-CCS), Kobe, 650-0047, Japan}
-\author*[b,1]{E.~Bennett}     \affiliation[b]{Swansea Academy of Advanced Computing, Swansea University, Swansea, United Kingdom}
-\author*[c,2]{R.~Bignell}     \affiliation[c]{School of Mathematics, Trinity College, Dublin, Ireland}
-\author*[d,3]{K.~U.~Can}      \affiliation[d]{CSSM, Department of Physics, The University of Adelaide, Australia}
-\author*[e,4]{T.~Doi}         \affiliation[e]{Interdisciplinary Theoretical and Mathematical Sciences Program (iTHEMS), RIKEN, Japan}
-\author*[f,5]{S.~Gottlieb}    \affiliation[f]{Department of Physics, Indiana University, IN, USA}
-\author*[g,6]{R.~Gupta}       \affiliation[g]{Theoretical Division, Los Alamos National Laboratory, NM, USA}
-\author*[h,7]{G.~von Hippel}  \affiliation[h]{PRISMA+ Cluster of Excellence and Institut f\"ur Kernphysik}
-\author*[a,8]{I.~Kanamori}   
-\author*[i,9]{A.~Kotov}       \affiliation[i]{J\"ulich Supercomputing Center, Forschungszentrum J\"ulich, Germany}
-\author*[j,10,\#]{G.~Koutsou} \affiliation[j]{Computation-based Science and Technology Research Center, The Cyprus Institute, Cyprus}
-\author*[k,11]{R.~Mawhinney}  \affiliation[k]{Physics Department, Columbia University, USA}
-\author*[l,12]{A.~Patella}    \affiliation[l]{Humboldt Universit\"at zu Berlin, Institut f\"ur Physik \& IRIS, Germany}
-\author*[i,13]{G.~Pederiva}   
-\author*[m,14]{C.~Schmidt}    \affiliation[m]{Fakult\"at f\"ur Physik, Universit\"at Bielefeld, Germany}
-\author*[n,15]{T.~Yamazaki}   \affiliation[n]{Institute of Pure and Applied Sciences, University of Tsukuba, Japan}
-\author*[o,16]{Y.-B.~Yang}    \affiliation[o]{School of Physical Sciences, University of Chinese Academy of Sciences, Beijing, China}
+\author[a,\#]{Yasumichi~Aoki}       \affiliation[a]{RIKEN Center for Computational Science (R-CCS), Kobe, 650-0047, Japan}
+\author*[b,1]{Ed~Bennett}     \affiliation[b]{Swansea Academy of Advanced Computing, Swansea University, Swansea, United Kingdom}
+\author*[c,2]{Rayan~Bignell}     \affiliation[c]{School of Mathematics, Trinity College, Dublin, Ireland}
+\author*[d,3]{Kadir~Utku~Can}      \affiliation[d]{CSSM, Department of Physics, The University of Adelaide, Australia}
+\author*[e,4]{Takumi~Doi}         \affiliation[e]{Interdisciplinary Theoretical and Mathematical Sciences Program (iTHEMS), RIKEN, Japan}
+\author*[f,5]{Steven~Gottlieb}    \affiliation[f]{Department of Physics, Indiana University, IN, USA}
+\author*[g,6]{Rajan~Gupta}       \affiliation[g]{Theoretical Division, Los Alamos National Laboratory, NM, USA}
+\author*[h,7]{Georg~von Hippel}  \affiliation[h]{PRISMA+ Cluster of Excellence and Institut f\"ur Kernphysik}
+\author*[a,8]{Issaku~Kanamori}   
+\author*[i,9]{Andrey~Kotov}       \affiliation[i]{J\"ulich Supercomputing Center, Forschungszentrum J\"ulich, Germany}
+\author*[j,10,\#]{Giannis~Koutsou} \affiliation[j]{Computation-based Science and Technology Research Center, The Cyprus Institute, Cyprus}
+\author*[k,11]{Robert~Mawhinney}  \affiliation[k]{Physics Department, Columbia University, USA}
+\author*[l,12]{Agostino~Patella}    \affiliation[l]{Humboldt Universit\"at zu Berlin, Institut f\"ur Physik \& IRIS, Germany}
+\author*[i,13]{Giovanni Pederiva}   
+\author*[m,14]{Christian Schmidt}    \affiliation[m]{Fakult\"at f\"ur Physik, Universit\"at Bielefeld, Germany}
+\author*[n,15]{Takeshi Yamazaki}   \affiliation[n]{Institute of Pure and Applied Sciences, University of Tsukuba, Japan}
+\author*[o,16]{Yi-Bo~Yang}    \affiliation[o]{School of Physical Sciences, University of Chinese Academy of Sciences, Beijing, China}
 
 \note[1]{For the TELOS collaboration}
 \note[2]{For the FASTSUM collaboration}
@@ -108,7 +108,7 @@ report of the contributions presented during that session can be found
 in Ref.~\cite{Bali:2022mlg}.
 
 These sessions are organized by the International Lattice Data Grid
-(ILDG) with the intention of obtaining gathering and summarizing the
+(ILDG) with the intention of obtaining, gathering, and summarizing the
 evolving needs of the lattice community in terms of data storage and
 management.  The ILDG was setup in the early
 2000s~\cite{Davies:2002mu,Yoshie:2008aw,Maynard:2009szr,Beckett:2009cb}
@@ -131,11 +131,11 @@ proceeding~\cite{ILDG2}.
 
 In the remainder of this proceeding, we present the status of ensemble
 generation of each of the 16 collaborations that contributed to the
-parallel session. We restrict to simulations of QCD, and at present
-these are carried out using \Nf{2}{1}, \Nf{2}{1}{1}, and
+parallel session. We restrict ourselves to simulations of QCD, and at
+present these are carried out using \Nf{2}{1}, \Nf{2}{1}{1}, and
 \Nf{1}{1}{1}{1} sea quark flavors with various fermion
 discretizations. The contributors were asked to specify whether their
-data are public or if they plan in making them public, their interest
+data are public or if they plan on making them public, their interest
 in using ILDG services and tools for that purpose, as well as some
 overall information regarding storage requirements. This information
 is collected in a table and summary section that follows the
@@ -316,7 +316,37 @@ to reach 3~PB.
 \emptylines{19}
 
 \subsection{MILC}
-\emptylines{19}
+The MILC Collaboration has been creating ensembles of gauge
+configurations for decades.  Initial calculations used two dynamical
+flavors with naive staggered quarks.  Second generation efforts used
+dynamical up, down, and strange quarks with the asqtad action,
+culminating with a review in Ref.~\cite{MILC:2009mpl}.  Our third
+generation calculations use the highly improved staggered quark (HISQ)
+action \cite{Follana:2006rc}.  They contain dynamical up, down,
+strange, and charm quarks.  For most of the ensembles, up and down are
+degenerate.  The charm quark is set near its physical value.  For
+several ensembles, the light quarks are near their average physical
+value.  There are also ensembles with $m_l= 0.1,$ or $0.2 m_s$, where
+$m_l$ ($m_s$) is the light (strange) quark mass.  We have generated a
+number of ensembles with $m_s$ less than its physical value to explore
+low energy constants and the chiral Lagrangian.  Lattice spacings are
+in the range of $[0.15, 0.03]$ fm.  In a few cases, multiple volumes
+are available.  Details about the generation of configurations can be
+found in Refs.~\cite{MILC:2010pul,MILC:2012znn,Bazavov:2017lyh}.
+
+The sharing policy for the MILC ensembles is available on
+GitHub~\cite{MILC:policy}. On that web page can be found links to 1)
+the sharing policy, 2) a Google Sheet detailing freely available
+ensembles, and 3) a document summarizing which papers to cite for the
+use of each ensemble.  Anyone wishing to use an ensemble that is not
+listed in the Google Sheet, but has been used in a publication or
+noted in a talk, is welcome to contact a member of the Fermilab
+Lattice or MILC Collaborations to inquire as to whether the ensemble
+can be made available for a specific project.  Many configurations are
+available on USQCD resources, making access relatively easy for USQCD
+members.  The ILDG is not operational in the US, but should it become
+so, we would make an effort to use it.  We have assisted transfer of
+configurations to other researchers both within and outside the US.
 
 \subsection{CLS}
 The CLS (Coordinated Lattice Simulations) effort uses the openQCD code
@@ -382,7 +412,7 @@ reweighting factors are included in the Config XML.
     RC*                          &        &      &       &         &              \\
     ETMC                         & 1      & P,U  & 24    & 12,000  & 3,000        \\
     JLQCD                        &        &      &       &         &              \\
-    MILC                         &        &      &       &         &              \\
+    MILC                         & 1      & I    & 50    & 70,000  & 600          \\
     CLS                          & 1      & P,U  & 25    &150,000  & 1,400        \\
     PACS                         &        &      &       &         &              \\\hline\hline
   \end{tabular}
