@@ -410,7 +410,38 @@ to reach 3~PB.
 \end{linenumbers}
 
 \subsection{JLQCD}
-\emptylines{19}
+The JLQCD collaboration uses a tree-level Symanzik improved gauge
+action and M\"obius domain wall fermions with the scale factor 2 and 3
+levels of stout smearing, of which details are found in the
+supplemental material of \cite{Colquhoun:2022atw}.  We have two
+targets of physics to study: one is $T=0$ 2+1 flavor focusing on
+B-physics, and the other is finite $T$ focusing chiral symmetry (2 and
+2+1 flavors) and investigation of the Columbia plot (3 and 2+1
+flavors).
+
+The $T=0$ ensembles are $32^3\times 64$ -- $64^3 \times 128$ lattices
+with pion mass $M_\pi$ between 230 -- 500~MeV, and the lattice cutoff
+$a^{-1}$ is 2.5, 3.6 and 4.5~GeV \cite{Colquhoun:2022atw}.  Together
+with 3 flavor ensembles with smaller volumes, we have more than 16
+ensembles with 1.5k configurations.
+
+Most of the finite-$T$ 2+1 flavor sets are generated along the line of
+constant physics at $m_l=m_s^{\text{phys}}/27.4$ and
+$m_l=m_s^{\text{phys}}/10$ with $N_T=12,~16$, and the remaining
+finite-$T$ ensembles (2, 2+1 and 3 flavors) are generated with the
+fixed $T$ approach.  Some up-to-date details are found in
+\cite{Aoki:2021qws} (2 flavor), \cite{Zhang:2024ldl} (3 flavor), and
+\cite{JLQCD:2024xey} (2+1 flavor).  The recent configurations are
+generated mainly on the Fugaku supercomputer using Grid
+\cite{Boyle:2016lbp}.  We employ the Hybrid Monte Carlo (HMC) and
+Rational Hybrid Monte Carlo algorithms.  For the three flavor systems,
+we apply the same 2+1 flavor algorithm but with degenerate masses.
+The generated configurations are stored in a grid file system, the
+Japan Lattice Data Grid (JLDG). We are in close contact with ILDG
+members and plan to start uploading ensembles.  The number of
+configurations and storage quoted in Table~\ref{tab:summary} assumes
+storing every 100~MD trajectories, which can be revised when uploading
+each ensemble.
 
 \subsection{MILC}
 The MILC Collaboration has been creating ensembles of gauge
@@ -541,10 +572,10 @@ of the data policies are under discussion within the collaboration.
     OpenLat                      & 2      & U    & 12    & 40,000  & 500          \\
     RC*                          &        &      &       &         &              \\
     ETMC                         & 1      & P,U  & 24    & 12,000  & 3,000        \\
-    JLQCD                        &        &      &       &         &              \\
+    JLQCD                        & 1      & P    & 260   & 37,000  & 15           \\
     MILC                         & 1      & I    & 50    & 70,000  & 600          \\
     CLS                          & 1      & P,U  & 25    & 150,000 & 1,400        \\
-    PACS                         & 2,1    & P,U &  6     &   200   &   200        \\\hline\hline
+    PACS                         & 2,1    & P,U  & 6     & 200     & 200          \\\hline\hline
   \end{tabular}
 \end{table}
 
@@ -577,12 +608,15 @@ number 460248186 (PUNCH4NFDI).
 
 The participating collaborations acknowledge the following HPC systems
 and HPC sites, for the generation of the gauge ensembles reported
-here,\par Oakforest-PACS in JCAHPC, Fugaku by RIKEN CCS, \par LUMI-C
-and LUMI-G at CSC, Finland,\par Irène Joliot-Curie at Très Grand
-Centre de Calcul (TGCC) in Bruyères-le-Châtel, France,\par JUGENE,
-JUWELS and JUWELS-Booster at Jülich Supercomputing Centre (JSC),\par
-HAWK at Höchstleistungsrechenzentrum Stuttgart (HLRS), Germany,\par
-SuperMUC and SuperMUC-NG at Leibniz Rechenzentrum (LRZ) in Garching,
+here,\par Oakforest-PACS at University of Tokyo,\par Wisteria at
+University of Tsukuba,\par Supercomputer Fugaku at RIKEN, \par SQUID
+at Osaka University,\par Polarie and Grand Chariot at Hokkaido
+University,\par LUMI-C and LUMI-G at CSC, Finland,\par IBM Blue Gene
+system at KEK,\par Irène Joliot-Curie at Très Grand Centre de Calcul
+(TGCC) in Bruyères-le-Châtel, France,\par JUGENE, JUWELS and
+JUWELS-Booster at Jülich Supercomputing Centre (JSC),\par HAWK at
+Höchstleistungsrechenzentrum Stuttgart (HLRS), Germany,\par SuperMUC
+and SuperMUC-NG at Leibniz Rechenzentrum (LRZ) in Garching,
 Germany,\par Kay and Stokes at the Irish Centre for High-End Computing
 (ICHEC) in Galway, Ireland,\par Leonardo, Marconi 100 and Marconi A2
 at CINECA in Bologna, Italy,\par Tesseract at the DiRAC Extreme
