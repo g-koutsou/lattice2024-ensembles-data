@@ -176,7 +176,36 @@ $\in(0,464]$~MeV. In addition, there are several anisotropic ensembles
 
 
 \subsection{Jlab/W\&M/LANL/MIT/Marseille}
-\emptylines{19}
+The Jlab/W\&M/LANL/MIT/Marseille collaborations are generating
+ensembles of (2+1)-flavor QCD including the Sheikholeslami-Wohlert
+(SW) term in the fermion action (the Wilson-clover action) and a
+tree-level tadpole improved Symanzik gauge action. To smooth the gauge
+fields, one iteration of four-dimensional stout smearing, with weight
+$\rho = 0.125$ for the staples, is used in the rational hybrid Monte
+Carlo (RHMC) algorithm.  After stout smearing, the tadpole improved
+tree-level clover coefficient is found to be very close to the
+non-perturbative value as checked by using the Schr\"odinger
+functional method for determining the clover coefficient
+non-perturbatively. The two light flavors ($u$ and $d$ quarks) are
+taken to be degenerate and ensembles are generated with $M_\pi \approx
+270,\ 220,\ 170$ and 130 MeV and with lattice spacings $a \approx
+0.12,\ 0.091,\ 0.071$ and 0.056 fm. The strange quark mass is tuned
+close to its physical value by requiring the ratio $(2M_{K^+}^2 -
+M_{\pi^+}^2)/M_{\Omega^-}$ takes on its physical value 0.1678, which
+is independent of the light quark masses to lowest order in
+$\chi$PT. Current analyses of the 13 ensembles generated so far,
+however, show that the kaon mass varies between 490--570 MeV,
+necessitating all analyses be done with $M_\pi$ and $M_K$ as
+independent parameters.  All eleven larger volume ensembles have
+$M_\pi L > 4$.  The setting of the lattice scale $a$ and quark masses
+$m_l$ and $m_s$ is being done using a global analysis of the octet and
+decuplet baryon spectrum, pion and kaon masses and decay constants and
+the flow parameters $w_0$ (or $t_0$). Details of the ensembles and
+their characterization, based on the results of this analysis of the
+spectral quantities, will be presented by April 2025.  These lattices
+are stored at Oak Ridge Leadership Computing Facility and constitute
+about 3.5 petabytes of data.
+
 \newpage
 \subsection{HotQCD}
 \emptylines{19}
@@ -258,10 +287,41 @@ which we aim to make available concurrently with the corresponding papers.
 
 
 \subsection{HAL QCD}
-\emptylines{19}
+The Hadrons to Atomic nuclei from Lattice QCD (HAL QCD) collaboration
+studies multi-hadron systems on the lattice and determines the
+interactions among hadrons, which are crucial quantities to construct
+a bridge between QCD and nuclear physics as well as astrophysics.
+%
+In order to perform the corresponding lattice calculations, it is
+necessary to prepare gauge configurations at the physical point with
+large physical volume(s) and a large number of ensembles, since the
+hadron interactions (whose ranges are typically $\sim 1/m_\pi$) are
+sensitive to quark masses, and statistical fluctuations of
+multi-hadron systems are known to be large.
+
+For this purpose, we generate a new set of configurations with
+\Nf{2}{1} non-perturbatively improved Wilson-clover fermions with
+stout smearing and the Iwasaki gauge action on a $96^4$
+lattice~\cite{Aoyama:2024cko}.  Utilizing the simulation parameters
+taken from those used in the PACS10
+configurations~\cite{Ishikawa:2018jee,PACS:2019ofv}, configurations
+were generated on the supercomputer Fugaku for 8,000 trajectories at a
+single lattice spacing, $a = 0.084$~fm, and at the physical point,
+$m_\pi = 137$~MeV, where we employ Hybrid Monte Carlo (HMC) with the
+domain-decomposed HMC algorithm and mass preconditioning for up and
+down quarks and with the rational HMC algorithm for the strange quark.
+The gauge configurations are stored for every fifth trajectory and
+thus amount to 1,600 configurations ($\sim 80$ TB) in total. The set
+is named ``HAL-conf-2023''~\cite{Aoyama:2024cko}.
+%
+We also performed Coulomb gauge fixing for the obtained
+configurations.  Utilizing rotational symmetry, we have $1,600 \times
+4$ (rotations) = 6,400 gauge-fixed configurations, which amount to
+$\sim 320$ TB.  We plan to to make these configurations public through
+JLDG/ILDG in the future, after performing the analyses which is
+currently on-going.
 
 \subsection{TWEXT}
-\begin{linenumbers}[1]
 The TWEXT (Twisted Wilson @ Extreme conditions) collaboration studies
 the properties of QCD at high temperature using Wilson Twisted Mass
 fermions. Problems under investigation include chiral properties of
@@ -286,7 +346,6 @@ $\sim80$ TB of disk space. Configurations are stored in the ILDG
 format. Possible collaborations are welcome and TWEXT plans to make
 configurations public/use ILDG in the future, after performing the
 ongoing analysis.
-\end{linenumbers}
 
 \subsection{QCDSF}
 The main focus of the QCDSF collaboration is hadron spectrum and
@@ -518,7 +577,7 @@ configurations on very large lattices close to the physical point
 employing the stout-smeared $\mathcal{O}(a)$-improved Wilson-clover
 quark action and Iwasaki gauge action. We use the stout smearing with
 six iterations.  The improvement coefficient for the clover term is
-nonperturbatively determined using the Schr\"odinger functional
+non-perturbatively determined using the Schr\"odinger functional
 scheme. These gauge configurations, which keep the space-time volumes
 larger than (10 fm)$^4$, are called ``PACS10'' configurations.  We
 have finished generating three gauge ensembles of (lattice spacing,
@@ -561,11 +620,11 @@ of the data policies are under discussion within the collaboration.
   \begin{tabular}{lccrrr}\hline\hline
     Collaboration                & Public & ILDG & \#ens & \#cfg   & Storage (TB) \\\hline
     CLQCD                        & 1      & I    & 20    & 10,000  & 100          \\
-    Jlab/W\&M/LANL/MIT/Marseille &        &      &       &         &              \\
+    Jlab/W\&M/LANL/MIT/Marseille & 1      & I    & 13    & 10,000  & 3,500        \\
     HotQCD                       &        &      &       &         &              \\
     FASTSUM                      & 2,1    & I    & 37    & 37,000  & 65           \\
     TELOS                        & 1      & P    & 250   & 800,000 & 120          \\
-    HAL QCD                      &        &      &       &         &              \\
+    HAL QCD                      & 1      & P    &  1    &  8,000  & 400          \\
     TWEXT                        & 1      & P    & 80    & 70,000  & 80           \\
     QCDSF                        & 1      & P,U  & 24    & 20,000  & 55           \\
     RBC-UKQCD                    &        &      &       &         &              \\
@@ -603,8 +662,13 @@ computational resources through the HPCI System Research Project
 hp190081, hp200062, hp200167, hp210112, hp220079, hp230199,
 hp240207). G.~P. acknowledges funding by the Deutsche
 Forschungsgemeinschaft (DFG, German Research Foundation) - project
-number 460248186 (PUNCH4NFDI).
-
+number 460248186 (PUNCH4NFDI). T.~D. acknowledges support from HPCI
+System Research Project (Grants No. hp200130, hp210165, hp220174,
+hp230207, hp240213, hp220066, hp230075, hp240157, hp210212, and
+hp220240), the JSPS (Grants No. JP18H05407, JP18H05236, JP19K03879,
+JP21H05190, JP23H05439), JST PRESTO Grant No. JPMJPR2113, ``Program
+for Promoting Researches on the Supercomputer Fugaku'' (Grants
+No. JPMXP1020200105, JPMXP1020230411).
 
 The participating collaborations acknowledge the following HPC systems
 and HPC sites, for the generation of the gauge ensembles reported
