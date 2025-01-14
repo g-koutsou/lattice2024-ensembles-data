@@ -214,10 +214,43 @@ for non-competitive calculations.
 \emptylines{19}
 
 \subsection{FASTSUM}
-The FASTSUM collaboration use \Nf{2}{1} flavor anisotropic gauge ensembles in the fixed-scale approach to study the behavior of QCD as a function of temperature in hadronic and plasma phases. Specifically we have considered the behavior of hadronic states including light, strange, charm and bottom quarks, the electrical conductivity of QCD matter, the interquark potential and properties of the chiral transition. % The fixed-scale approach allows for a conceptually clear investigation of temperature effects while anisotropy allows more temporal points at each temperature.
-FASTSUM gauge fields utilise an $\mathcal{O}\left(a^2\right)$ improved Symanzik gauge action and an $\mathcal{O}\left(a\right)$ improved spatially stout-smeared Wilson-Clover action following the parameter tuning and zero-temperature ensembles of the Hadron Spectrum collaboration~\cite{Edwards:2008ja,HadronSpectrum:2008xlg}. ``Generation 2'' ensembles were generated using the Chroma~\cite{Edwards:2004sx} software suite while the newer ``Generation 2L'' used a modfication~\cite{glesaaen_jonas_rylund_2018_2216355} of the {\sc openQCD}~\cite{Luscher:2012av,openqcd} package which introduces stout-link smearing and anisotropic actions. Generation 2 and 2L have an anisotropy $\xi = a_s/a_\tau \sim 3.5$ with $a_s\sim 0.12$ fm, $N_s = 24$ or $32$ and a wide range of $N_\tau$ corresponding to $T \in[44,760]$ MeV. %``Generation 2'' and ``Generation 2L'' differ mainly in their quark mass.
-Full details of these ensembles may be found in Refs.~\cite{Aarts:2014nba,Aarts:2020vyb}. We are in the process of production for ``Generation 3'' - a parameter set similar to ``Generation 2'' but with twice the anistropy $\xi \sim 7$ - using {\sc openQCD-FASTSUM}~\cite{glesaaen_jonas_rylund_2018_2216355}. %As we use a derivative of the {\sc openQCD} package log, files include information such as the {\sc openQCD} version, algorithmic parameters, plaquette values and the run time. Additionally
-We maintain a centralised metadata repository detailing (among other information) who was responsible for each run, on which machine that run was produced and where copies may be found. The gauge fields are redundantly stored on two (well-separated) storage servers managed by Swansea University in the openQCD format. The ``Generation 2'' ensembles are publically available~\cite{aarts_2024_8403827} while other ensembles will be available after an embargo period. We anticipate making ensembles available through the next incarnation of the ILDG with supplementary information also available on Zenodo~\cite{zenodo,aarts_2024_8403827}.
+The FASTSUM collaboration use \Nf{2}{1} flavor anisotropic gauge
+ensembles in the fixed-scale approach to study the behavior of QCD as
+a function of temperature in hadronic and plasma phases. Specifically
+we have considered the behavior of hadronic states including light,
+strange, charm and bottom quarks, the electrical conductivity of QCD
+matter, the interquark potential and properties of the chiral
+transition.
+% The fixed-scale approach allows for a conceptually clear investigation of temperature effects while anisotropy allows more temporal points at each temperature.
+FASTSUM gauge fields utilise an $\mathcal{O}\left(a^2\right)$ improved
+Symanzik gauge action and an $\mathcal{O}\left(a\right)$ improved
+spatially stout-smeared Wilson-Clover action following the parameter
+tuning and zero-temperature ensembles of the Hadron Spectrum
+collaboration~\cite{Edwards:2008ja,HadronSpectrum:2008xlg}. ``Generation
+2'' ensembles were generated using the Chroma~\cite{Edwards:2004sx}
+software suite while the newer ``Generation 2L'' used a
+modfication~\cite{glesaaen_jonas_rylund_2018_2216355} of the {\sc
+  openQCD}~\cite{Luscher:2012av,openqcd} package which introduces
+stout-link smearing and anisotropic actions. Generation 2 and 2L have
+an anisotropy $\xi = a_s/a_\tau \sim 3.5$ with $a_s\sim 0.12$ fm, $N_s
+= 24$ or $32$ and a wide range of $N_\tau$ corresponding to $T
+\in[44,760]$ MeV. %``Generation 2'' and ``Generation 2L'' differ
+mainly in their quark mass.  Full details of these ensembles may be
+found in Refs.~\cite{Aarts:2014nba,Aarts:2020vyb}. We are in the
+process of production for ``Generation 3'' - a parameter set similar
+to ``Generation 2'' but with twice the anistropy $\xi \sim 7$ - using
+{\sc openQCD-FASTSUM}~\cite{glesaaen_jonas_rylund_2018_2216355}.
+%As we use a derivative of the {\sc openQCD} package log, files include information such as the {\sc openQCD} version, algorithmic parameters, plaquette values and the run time. Additionally
+We maintain a centralised metadata repository detailing (among other
+information) who was responsible for each run, on which machine that
+run was produced and where copies may be found. The gauge fields are
+redundantly stored on two (well-separated) storage servers managed by
+Swansea University in the openQCD format. The ``Generation 2''
+ensembles are publically available~\cite{aarts_2024_8403827} while
+other ensembles will be available after an embargo period. We
+anticipate making ensembles available through the next incarnation of
+the ILDG with supplementary information also available on
+Zenodo~\cite{zenodo,aarts_2024_8403827}.
 %\emptylines{19}
 
 \subsection{TELOS}
@@ -664,13 +697,13 @@ precision calculations involving heavy quarks and for controlling
 discretization effects in general.
 
 The summary of ensemble generation efforts and data management
-characteristics is presented in Table~\ref{table:ensembles}. The
-collected data indicate that most collaborations plan to make their
-ensembles publicly available after an embargo period, with strong
-interest in utilizing ILDG infrastructure for data sharing. The total
-storage requirements reported by the collaborations are expected to
-exceed 10~PB, highlighting the substantial data management challenges
-faced by the community.
+characteristics is presented in Table~\ref{tab:summary}. The collected
+data indicate that most collaborations plan to make their ensembles
+publicly available after an embargo period, with strong interest in
+utilizing ILDG infrastructure for data sharing. The total storage
+requirements reported by the collaborations are expected to exceed
+10~PB, highlighting the substantial data management challenges faced
+by the community.
 
 Several trends can be identified in the current ensemble generation
 efforts, namely: i) Increased focus on physical or near-physical quark
@@ -737,7 +770,7 @@ and HPC sites for the generation of the gauge ensembles reported here,
 \item National Computer Infrastructure (NCI) National Facility in
   Canberra, supported by the Australian Commonwealth Government and
   the Pawsey Supercomputing Centre, supported by the Australian
-  Government and the Government of Western Australia, Australia
+  Government and the Government of Western Australia, Australia;
   
 \item HPC Cluster of ITP-CAS, the Southern Nuclear Science
   Computing Center (SNSC) in Beijing and the Siyuan-1 cluster,
