@@ -2,6 +2,7 @@
 % data according to the instructions in PoSauthmanual.pdf
 \documentclass[a4paper,11pt]{article}
 \usepackage{pos}
+\usepackage{enumitem}
 \usepackage{lineno}[pagewise]
 \usepackage{forloop}
 \usepackage[para]{footmisc}
@@ -638,74 +639,149 @@ of the data policies are under discussion within the collaboration.
   \end{tabular}
 \end{table}
 
+The contributions presented in this proceeding demonstrate the diverse
+approaches being taken in lattice QCD simulations. The fermionic
+actions used by the contributing groups include staggered quarks,
+particularly using the HISQ action (MILC, HotQCD, and CLQCD), improved
+Wilson quarks on isotropic lattices (CLQCD,
+Jlab/W\&M/LANL/MIT/Marseille, PACS, CLS, and QCDSF), improved Wilson
+quarks on anisotropic lattices (FASTSUM and CLQCD), twisted mass
+fermions (ETMC and TWEXT), Domain Wall fermions (JLQCD and RBC-UKQCD),
+and Stabilized Wilson Fermions (OpenLat).
 
-\acknowledgments G.~K. acknowledges support from EXCELLENCE/0421/0195,
-co-financed by the European Regional Development Fund and the Republic
-of Cyprus through the Research and Innovation Foundation and the
-AQTIVATE a Marie Sk\l{}odowska-Curie Doctoral Network
-GA~No.~101072344.  R.~B. acknowledges support from a Science
-Foundation Ireland Frontiers for the Future Project award with grant
-number SFI-21/FFP-P/10186. The work of E.~B. is part-funded by the
-UKRI Science and Technology Facilities Council (STFC) Research
-Software Engineer Fellowship EP/V052489/1, the UKRI Engineering and
-Physical Science Research Council (EPSRC) ExCALIBUR programme ExaTEPP
-project EP/X017168/1, and the STFC Consolidated Grant
-ST/T000813/1. Y.-B.~Y. is supported in part by NSFC grants
-No.~12293060, and~12435002. K.~U.~C. is supported by the Australian
-Research Council grant DP190100297, DP220103098 and DP240102839. T.~Y.
-acknowledges Grants-in-Aid for Scientific Research from the Ministry
-of Education, Culture, Sports, Science and Technology (No. 19H01892,
-23H01195, 23K25891), MEXT as ``Program for Promoting Researches on the
-Supercomputer Fugaku'' (JPMXP1020230409) and support from
-computational resources through the HPCI System Research Project
-(Project IDs: hp170022, hp180051, hp180072, hp180126, hp190025,
-hp190081, hp200062, hp200167, hp210112, hp220079, hp230199,
-hp240207). G.~P. acknowledges funding by the Deutsche
+The simulations span both zero and finite temperature studies, with
+some collaborations focusing exclusively on $T > 0$, such as TWEXT and
+HotQCD, others on $T = 0$, and some pursuing both regimes, such as
+FASTSUM and MILC. Most simulations employ either \Nf{2}{1} or
+\Nf{2}{1}{1} sea quark flavors, with all the more ensembles being
+tuned to their physical values.
+
+A key development reflected in this year's contributions is the
+growing effort to generate ensembles at finer lattice spacings, with
+several collaborations now reaching $a\simeq0.04$~fm or smaller. This
+push towards the continuum limit is particularly important for
+precision calculations involving heavy quarks and for controlling
+discretization effects in general.
+
+The summary of ensemble generation efforts and data management
+characteristics is presented in Table~\ref{table:ensembles}. The
+collected data indicate that most collaborations plan to make their
+ensembles publicly available after an embargo period, with strong
+interest in utilizing ILDG infrastructure for data sharing. The total
+storage requirements reported by the collaborations are expected to
+exceed 10~PB, highlighting the substantial data management challenges
+faced by the community.
+
+Several trends can be identified in the current ensemble generation
+efforts, namely: i) Increased focus on physical or near-physical quark
+masses; ii) Growing emphasis on large physical volumes, with some
+collaborations targeting (10 fm)\textsuperscript{4} or larger; iii)
+Development of new algorithmic approaches to address challenges in
+ensemble generation; iv) Enhanced attention to metadata collection and
+provenance tracking; and v) An interest in open science principles,
+with most groups planning public release of their data
+
+The challenge of maintaining long-term storage infrastructure and
+providing reliable access to these valuable datasets remains a
+critical concern for the community. While ILDG 2.0 allows for
+standardizing data sharing, the responsibility for storage space and
+persistent accessibility remains with regional facilities and
+individual collaborations. This highlights the ongoing need for
+sustainable mechanisms to support storage resources required for
+lattice QCD calculations, similar to those currently available for
+computation.
+
+The recorded level of interest in ILDG participation demonstrated by
+the contributing groups suggests a strong community desire for
+standardized data management practices. This may help facilitate the
+establishment of well-defined workflows and standards for data
+sharing, ultimately enhancing the accessibility and reusability of
+lattice QCD ensembles.
+
+\acknowledgments
+
+The work of E.~B. is part-funded by the UKRI Science and Technology
+Facilities Council (STFC) Research Software Engineer Fellowship
+EP/V052489/1, the UKRI Engineering and Physical Science Research
+Council (EPSRC) ExCALIBUR programme ExaTEPP project EP/X017168/1, and
+the STFC Consolidated Grant ST/T000813/1. R.~B. acknowledges support
+from a Science Foundation Ireland Frontiers for the Future Project
+award with grant number SFI-21/FFP-P/10186. K.~U.~C. is supported by
+the Australian Research Council grant DP190100297, DP220103098 and
+DP240102839. T.~D. acknowledges support from HPCI System Research
+Project (Grants No. hp200130, hp210165, hp220174, hp230207, hp240213,
+hp220066, hp230075, hp240157, hp210212, and hp220240), the JSPS
+(Grants No. JP18H05407, JP18H05236, JP19K03879, JP21H05190,
+JP23H05439), JST PRESTO Grant No. JPMJPR2113, ``Program for Promoting
+Researches on the Supercomputer Fugaku'' (Grants No. JPMXP1020200105,
+JPMXP1020230411). G.~K. acknowledges support from
+EXCELLENCE/0421/0195, co-financed by the European Regional Development
+Fund and the Republic of Cyprus through the Research and Innovation
+Foundation and the AQTIVATE a Marie Sk\l{}odowska-Curie Doctoral
+Network GA~No.~101072344.  G.~P. acknowledges funding by the Deutsche
 Forschungsgemeinschaft (DFG, German Research Foundation) - project
-number 460248186 (PUNCH4NFDI). T.~D. acknowledges support from HPCI
-System Research Project (Grants No. hp200130, hp210165, hp220174,
-hp230207, hp240213, hp220066, hp230075, hp240157, hp210212, and
-hp220240), the JSPS (Grants No. JP18H05407, JP18H05236, JP19K03879,
-JP21H05190, JP23H05439), JST PRESTO Grant No. JPMJPR2113, ``Program
-for Promoting Researches on the Supercomputer Fugaku'' (Grants
-No. JPMXP1020200105, JPMXP1020230411).
+number 460248186 (PUNCH4NFDI). T.~Y.  acknowledges Grants-in-Aid for
+Scientific Research from the Ministry of Education, Culture, Sports,
+Science and Technology (No. 19H01892, 23H01195, 23K25891), MEXT as
+``Program for Promoting Researches on the Supercomputer Fugaku''
+(JPMXP1020230409) and support from computational resources through the
+HPCI System Research Project (Project IDs: hp170022, hp180051,
+hp180072, hp180126, hp190025, hp190081, hp200062, hp200167, hp210112,
+hp220079, hp230199, hp240207). Y.-B.~Y. is supported in part by NSFC
+grants No.~12293060, and~12435002.
 
 The participating collaborations acknowledge the following HPC systems
-and HPC sites, for the generation of the gauge ensembles reported
-here,\par Oakforest-PACS at University of Tokyo,\par Wisteria at
-University of Tsukuba,\par Supercomputer Fugaku at RIKEN, \par SQUID
-at Osaka University,\par Polarie and Grand Chariot at Hokkaido
-University,\par LUMI-C and LUMI-G at CSC, Finland,\par IBM Blue Gene
-system at KEK,\par Irène Joliot-Curie at Très Grand Centre de Calcul
-(TGCC) in Bruyères-le-Châtel, France,\par JUGENE, JUWELS and
-JUWELS-Booster at Jülich Supercomputing Centre (JSC),\par HAWK at
-Höchstleistungsrechenzentrum Stuttgart (HLRS), Germany,\par SuperMUC
-and SuperMUC-NG at Leibniz Rechenzentrum (LRZ) in Garching,
-Germany,\par Kay and Stokes at the Irish Centre for High-End Computing
-(ICHEC) in Galway, Ireland,\par Leonardo, Marconi 100 and Marconi A2
-at CINECA in Bologna, Italy,\par Tesseract at the DiRAC Extreme
-Scaling Service at the University of Edinburgh, United Kingdom,\par
-DiRAC Data Intensive 2.5 \& 3 at the University of Leicester, United
-Kingdom,\par Sunbird of Supercomputing Wales, supported by the
-European Regional Development Fund via the Welsh Government,\par the
-HPC Cluster of ITP-CAS, the Southern Nuclear Science Computing Center
-(SNSC),\par Siyuan-1 cluster, supported by the Center for High
-Performance Computing at Shanghai Jiao Tong University, \par Frontera
-at TACC, TX, US,\par Cambridge Service for Data Driven Discovery
-(CSD3),\par the North-German Supercomputer Alliance (HLRN),\par the
-National Computer Infrastructure (NCI National Facility in Canberra,
-Australia supported by the Australian Commonwealth Government),\par
-the Pawsey Supercomputing Centre, which is supported by the Australian
-Government and the Government of Western Australia, \par Oak Ridge
-Leadership Computing Facility, TN, US, \par Institutional Computing at Los
-Alamos National Lab, NM, US, \par the computing facilities at
-Jefferson Lab, VA, US, \par Perlmutter at the National Energy Research
-Scientific Computing Center (NERSC), CA, US, and \par the DiRAC
-Extreme Scaling and Data Intensive services, which are part of the
-UKRI Digital Research Infrastructure.
+and HPC sites for the generation of the gauge ensembles reported here,
+
+\begin{itemize}[leftmargin=*, align=left, itemsep=1pt, topsep=0pt, parsep=0pt]
+\item National Computer Infrastructure (NCI) National Facility in
+  Canberra, supported by the Australian Commonwealth Government and
+  the Pawsey Supercomputing Centre, supported by the Australian
+  Government and the Government of Western Australia, Australia
+  
+\item HPC Cluster of ITP-CAS, the Southern Nuclear Science
+  Computing Center (SNSC) in Beijing and the Siyuan-1 cluster,
+  supported by the Center for High Performance Computing at Shanghai
+  Jiao Tong University, China;
+  
+\item LUMI-C and LUMI-G at CSC, Finland;
+  
+\item SuperMUC and SuperMUC-NG at the Leibniz Rechenzentrum (LRZ) in
+  Garching, JUGENE, JUWELS, and JUWELS-Booster at the Jülich
+  Supercomputing Centre (JSC) in J\"ulich, HAWK at
+  Höchstleistungsrechenzentrum Stuttgart (HLRS), and the
+  North-German Supercomputer Alliance (HLRN), Germany;
+
+\item  Irène Joliot-Curie at Très Grand Centre de Calcul (TGCC) in
+  Bruyères-le-Châtel, France;
+
+\item Kay and Stokes at the Irish Centre for High-End Computing
+  (ICHEC) in Galway, Ireland;
+
+\item Leonardo, Marconi 100, and Marconi A2 at CINECA in Bologna,
+  Italy;
+  
+\item Polarie and Grand Chariot at Hokkaido University, the IBM Blue
+  Gene system at KEK, SQUID at Osaka University, Supercomputer
+  Fugaku at RIKEN, Oakforest-PACS at University of Tokyo, and
+  Wisteria at University of Tsukuba, Japan;
+  
+
+\item Cambridge Service for Data Driven Discovery (CSD3) in Cambridge,
+  Tesseract at the DiRAC Extreme Scaling Service at the University of
+  Edinburgh, DiRAC Data Intensive 2.5 \& 3 at the University of
+  Leicester, and Sunbird of Supercomputing Wales, supported by the
+  European Regional Development Fund via the Welsh Government, United
+  Kingdom;
+    
+\item Institutional Perlmutter at the National Energy Research
+Scientific Computing Center (NERSC), California, Computing at Los
+Alamos National Lab, New Mexico, Oak Ridge Leadership Computing
+Facility, Tennessee, Frontera at TACC, Texas, and the computing
+facilities at Jefferson Lab, Virginia, United States.
+\end{itemize}
 
 
-\bibliographystyle{JHEP}
-\bibliography{refs}
+\bibliographystyle{JHEP} \bibliography{refs}
 
 \end{document}
