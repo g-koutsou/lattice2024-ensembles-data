@@ -34,12 +34,12 @@
 \author*[a,8]{Issaku~Kanamori}   
 \author*[i,9]{Andrey~Kotov}       \affiliation[i]{J\"ulich Supercomputing Center, Forschungszentrum J\"ulich, Germany}
 \author*[j,10,\#]{Giannis~Koutsou} \affiliation[j]{Computation-based Science and Technology Research Center, The Cyprus Institute, Cyprus}
-\author*[k,11]{Robert~Mawhinney}  \affiliation[k]{Physics Department, Columbia University, USA}
-\author*[l,12]{Agostino~Patella}    \affiliation[l]{Humboldt Universit\"at zu Berlin, Institut f\"ur Physik \& IRIS, Germany}
-\author*[i,13]{Giovanni Pederiva}   
-\author*[m,14]{Christian Schmidt}    \affiliation[m]{Fakult\"at f\"ur Physik, Universit\"at Bielefeld, Germany}
-\author*[n,15]{Takeshi Yamazaki}   \affiliation[n]{Institute of Pure and Applied Sciences, University of Tsukuba, Japan}
-\author*[o,16]{Yi-Bo~Yang}    \affiliation[o]{CAS Key Laboratory of Theoretical Physics, Institute of Theoretical Physics, Chinese Academy of Sciences, Beijing 100190, China}
+%\author*[k,11]{Robert~Mawhinney}  \affiliation[k]{Physics Department, Columbia University, USA}
+%\author*[l,12]{Agostino~Patella}    \affiliation[l]{Humboldt Universit\"at zu Berlin, Institut f\"ur Physik \& IRIS, Germany}
+\author*[i,11]{Giovanni Pederiva}   
+%\author*[m,14]{Christian Schmidt}    \affiliation[m]{Fakult\"at f\"ur Physik, Universit\"at Bielefeld, Germany}
+\author*[k,12]{Takeshi Yamazaki}   \affiliation[k]{Institute of Pure and Applied Sciences, University of Tsukuba, Japan}
+\author*[l,13]{Yi-Bo~Yang}    \affiliation[l]{CAS Key Laboratory of Theoretical Physics, Institute of Theoretical Physics, Chinese Academy of Sciences, Beijing 100190, China}
 
 \note[1]{For the TELOS collaboration}
 \note[2]{For the FASTSUM collaboration}
@@ -51,12 +51,12 @@
 \note[8]{For the JLQCD collaboration}
 \note[9]{For the TWEXT collaboration}
 \note[10]{For the ETM collaboration (ETMC)}
-\note[11]{For the RBC-UKQCD collaboration}
-\note[12]{For the RC* collaboration}
-\note[13]{For the OpenLat initiative}
-\note[14]{For the HotQCD collaboration}
-\note[15]{For the PACS collaboration}
-\note[16]{For the CLQCD collaboration}
+%\note[11]{For the RBC-UKQCD collaboration}
+%\note[12]{For the RC* collaboration}
+\note[11]{For the OpenLat initiative}
+%\note[14]{For the HotQCD collaboration}
+\note[12]{For the PACS collaboration}
+\note[13]{For the CLQCD collaboration}
 
 \note[\#]{Conveners}
 
@@ -131,23 +131,22 @@ during the same session and can be found in a separate
 proceeding~\cite{ILDG2}.
 
 In the remainder of this proceeding, we present the status of ensemble
-generation of each of the 16 collaborations that contributed to the
-parallel session. We restrict ourselves to simulations of QCD, and at
-present these are carried out using \Nf{2}{1}, \Nf{2}{1}{1}, and
-\Nf{1}{1}{1}{1} sea quark flavors with various fermion
-discretizations. The contributors were asked to specify whether their
-data are public or if they plan on making them public, their interest
-in using ILDG services and tools for that purpose, as well as some
-overall information regarding storage requirements. This information
-is collected in a table and summary section that follows the
-individual contributions.
+generation of the 13 collaborations that contributed to this
+proceedings contribution. The ensembles reported were generated using
+\Nf{2}{1}, \Nf{2}{1}{1}, and \Nf{1}{1}{1}{1} sea quark flavors with
+various fermion discretizations. The contributors were asked to
+specify whether their data are public or if they plan on making them
+public, their interest in using ILDG services and tools for that
+purpose, as well as some overall information regarding storage
+requirements. This information is collected in a table and summary
+section that follows the individual contributions.
 
 \section{Contributions}
 The contributions from each collaboration follow, in the order
 presented during the parallel session. The original presentations can
 be found on the conference website~\cite{parallel-session}.
 
-\newpage
+%\newpage
 \subsection{CLQCD}
 
 The CLQCD collaboration focuses on the first principles QCD study of
@@ -209,9 +208,9 @@ one stored at the Oak Ridge Leadership Computing Facility, and
 constitute about 3.5 PB of data. They are available to USQCD mambers
 for non-competitive calculations.
 
-\newpage
-\subsection{HotQCD}
-\emptylines{19}
+%\newpage
+%\subsection{HotQCD}
+%\emptylines{19}
 
 \subsection{FASTSUM}
 The FASTSUM collaboration use \Nf{2}{1} flavor anisotropic gauge
@@ -431,8 +430,8 @@ request through ILDG, pending the collaboration's confirmation. QCDSF
 is open to new collaborative projects.
 
 
-\subsection{RBC-UKQCD}
-\emptylines{19}
+%\subsection{RBC-UKQCD}
+%\emptylines{19}
 
 \subsection{OpenLat}
 The Open Lattice Initiative is generating QCD ensembles using
@@ -463,9 +462,9 @@ ensembles are publicly available for use after the publication of the
 corresponding stage has been completed. The total storage required is
 expected to be 0.5~PB.
 
-\newpage
-\subsection{RC*}
-\emptylines{19}
+%\newpage
+%\subsection{RC*}
+%\emptylines{19}
 
 \subsection{ETMC}
 The ETM collaboration focuses on hadron spectroscopy, hadron
@@ -655,15 +654,15 @@ of the data policies are under discussion within the collaboration.
     Collaboration                & Public & ILDG & \#ens & \#cfg   & Storage (TB) \\\hline
     CLQCD                        & 1      & I    & 20    & 10,000  & 100          \\
     Jlab/W\&M/LANL/MIT/Marseille & 0      & N    & 13    & 10,000  & 3,500        \\
-    HotQCD                       &        &      &       &         &              \\
+%    HotQCD                       &        &      &       &         &              \\
     FASTSUM                      & 2,1    & I    & 37    & 37,000  & 65           \\
     TELOS                        & 1      & P    & 250   & 800,000 & 120          \\
     HAL QCD                      & 1      & P    &  1    &  8,000  & 400          \\
     TWEXT                        & 1      & P    & 80    & 70,000  & 80           \\
     QCDSF                        & 1      & P,U  & 24    & 20,000  & 55           \\
-    RBC-UKQCD                    &        &      &       &         &              \\
+%    RBC-UKQCD                    &        &      &       &         &              \\
     OpenLat                      & 2      & U    & 12    & 40,000  & 500          \\
-    RC*                          &        &      &       &         &              \\
+%    RC*                          &        &      &       &         &              \\
     ETMC                         & 1      & P,U  & 24    & 12,000  & 3,000        \\
     JLQCD                        & 1      & P    & 260   & 37,000  & 15           \\
     MILC                         & 1      & I    & 50    & 70,000  & 600          \\
@@ -675,19 +674,19 @@ of the data policies are under discussion within the collaboration.
 The contributions presented in this proceeding demonstrate the diverse
 approaches being taken in lattice QCD simulations. The fermionic
 actions used by the contributing groups include staggered quarks,
-particularly using the HISQ action (MILC, HotQCD, and CLQCD), improved
+particularly using the HISQ action (MILC, and CLQCD), improved
 Wilson quarks on isotropic lattices (CLQCD,
 Jlab/W\&M/LANL/MIT/Marseille, PACS, CLS, and QCDSF), improved Wilson
 quarks on anisotropic lattices (FASTSUM and CLQCD), twisted mass
-fermions (ETMC and TWEXT), Domain Wall fermions (JLQCD and RBC-UKQCD),
+fermions (ETMC and TWEXT), Domain Wall fermions (JLQCD),
 and Stabilized Wilson Fermions (OpenLat).
 
 The simulations span both zero and finite temperature studies, with
-some collaborations focusing exclusively on $T > 0$, such as TWEXT and
-HotQCD, others on $T = 0$, and some pursuing both regimes, such as
-FASTSUM and MILC. Most simulations employ either \Nf{2}{1} or
-\Nf{2}{1}{1} sea quark flavors, with all the more ensembles being
-tuned to their physical values.
+some collaborations focusing exclusively on $T > 0$, such as TWEXT,
+others on $T = 0$, and some pursuing both regimes, such as FASTSUM and
+MILC. Most simulations employ either \Nf{2}{1} or \Nf{2}{1}{1} sea
+quark flavors, with all the more ensembles being tuned to their
+physical values.
 
 A key development reflected in this year's contributions is the
 growing effort to generate ensembles at finer lattice spacings, with
