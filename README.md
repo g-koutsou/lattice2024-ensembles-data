@@ -14,6 +14,7 @@ Authors:
 - I. Kanamori
 - A. Kotov
 - G. Koutsou
+- A. Patella
 - G. Pederiva
 - T. Yamazaki
 - Y.-B. Yang

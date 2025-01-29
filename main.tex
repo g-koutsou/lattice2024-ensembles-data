@@ -35,11 +35,11 @@
 \author*[i,9]{Andrey~Kotov}       \affiliation[i]{J\"ulich Supercomputing Center, Forschungszentrum J\"ulich, Germany}
 \author*[j,10,\#]{Giannis~Koutsou} \affiliation[j]{Computation-based Science and Technology Research Center, The Cyprus Institute, Cyprus}
 %\author*[k,11]{Robert~Mawhinney}  \affiliation[k]{Physics Department, Columbia University, USA}
-%\author*[l,12]{Agostino~Patella}    \affiliation[l]{Humboldt Universit\"at zu Berlin, Institut f\"ur Physik \& IRIS, Germany}
-\author*[i,11]{Giovanni Pederiva}   
+\author*[k,11]{Agostino~Patella}    \affiliation[k]{Humboldt Universit\"at zu Berlin, Institut f\"ur Physik \& IRIS, Germany}
+\author*[i,12]{Giovanni Pederiva}   
 %\author*[m,14]{Christian Schmidt}    \affiliation[m]{Fakult\"at f\"ur Physik, Universit\"at Bielefeld, Germany}
-\author*[k,12]{Takeshi Yamazaki}   \affiliation[k]{Institute of Pure and Applied Sciences, University of Tsukuba, Japan}
-\author*[l,13]{Yi-Bo~Yang}    \affiliation[l]{CAS Key Laboratory of Theoretical Physics, Institute of Theoretical Physics, Chinese Academy of Sciences, Beijing 100190, China}
+\author*[l,13]{Takeshi Yamazaki}   \affiliation[l]{Institute of Pure and Applied Sciences, University of Tsukuba, Japan}
+\author*[m,14]{Yi-Bo~Yang}    \affiliation[m]{CAS Key Laboratory of Theoretical Physics, Institute of Theoretical Physics, Chinese Academy of Sciences, Beijing 100190, China}
 
 \note[1]{For the TELOS collaboration}
 \note[2]{For the FASTSUM collaboration}
@@ -47,16 +47,16 @@
 \note[4]{For the HAL QCD collaboration}
 \note[5]{For the MILC collaboration}
 \note[6]{For the Jlab/W\&M/LANL/MIT/Marseille effort}
-\note[7]{For the CLS}
+\note[7]{For CLS}
 \note[8]{For the JLQCD collaboration}
 \note[9]{For the TWEXT collaboration}
 \note[10]{For the ETM collaboration (ETMC)}
 %\note[11]{For the RBC-UKQCD collaboration}
-%\note[12]{For the RC* collaboration}
-\note[11]{For the OpenLat initiative}
+\note[11]{For the RC$^\star$ collaboration}
+\note[12]{For the OpenLat initiative}
 %\note[14]{For the HotQCD collaboration}
-\note[12]{For the PACS collaboration}
-\note[13]{For the CLQCD collaboration}
+\note[13]{For the PACS collaboration}
+\note[14]{For the CLQCD collaboration}
 
 \note[\#]{Conveners}
 
@@ -131,7 +131,7 @@ during the same session and can be found in a separate
 proceeding~\cite{ILDG2}.
 
 In the remainder of this proceeding, we present the status of ensemble
-generation of the 13 collaborations that contributed to this
+generation of the 14 collaborations that contributed to this
 proceedings contribution. The ensembles reported were generated using
 \Nf{2}{1}, \Nf{2}{1}{1}, and \Nf{1}{1}{1}{1} sea quark flavors with
 various fermion discretizations. The contributors were asked to
@@ -463,7 +463,44 @@ corresponding stage has been completed. The total storage required is
 expected to be 0.5~PB.
 
 %\newpage
-%\subsection{RC*}
+\subsection{RC$^\star$}
+The RC$^\star$ Collaboration is generating QCD and QCD+QED ensembles
+with 3 or 4 flavours. We employ C-periodic (\textit{aka} C$^\star$)
+boundary conditions in space, which allow to have a local and
+gauge-invariant formulation of QED in finite
+volume~\cite{Lucini:2015hfa}. For the SU($3$) gauge field we use the
+L\"uscher-Weisz action, while for the compact U($1$) field we use the
+Wilson action. The Wilson-clover discretization of the Dirac operator
+is used, which includes two Sheikholeslami-Wohlert (SW) terms for the
+coupling to the SU($3$) and U($1$) field-strength tensors. The
+coefficients are chosen in such a why that $O(a \alpha_{\text{em}}^0)$
+improvement is guaranteed non-perturbatively in
+$\alpha_{\text{s}}$. All ensembles generated so far have a lattice
+spacing of about $0.05\text{ fm}$, a heavier-than-physical charged
+pion with mass between $360\text{ MeV}$ and $500\text{ MeV}$. We plan
+to move towards lighter pions in the near future. The spatial lattice
+extent $L$ ranges between $2.9M_\pi^{-1}$ and $6.7M_\pi^{-1}$. Three
+values of the fine-structure constant $\alpha_{\text{em}}$ have been
+considered so far besides zero, i.e. its physical value, $2.7$ and
+$5.5$ times its physical value. In all cases, the $\beta$ for the
+U($1$) is smaller than $0.035$, ensuring that the QED sector is deep
+in the perturbative regime and away from the bulk phase transition of
+the compact U($1$) model. The configurations are generated with the
+publicly-available \texttt{openQ*D}
+code~\cite{Campos:2019kgw,10261_173334}, which is based on
+openQCD-1.6. Some of the ensembles as well as the used algorithms are
+described in~\cite{RCstar:2022yjz}. At the moment we have 80Tb of data
+stored on the machines where they have been generated. This includes
+configurations, input and log files, histories of various reweigthing
+factors (to correct for the rational approximation and for occasional
+change of sign of the fermionic Pfaffian) and basic observables
+(gradient-flow observables and meson correlators). The RC$^\star$
+Collaboration has worked closely with the ILDG metadata working group
+to extend the XML schema in order to accommodate metadata for QCD+QED
+configurations with various finite-volume formulation of QED. We plan
+to generate the XML metadata and make our ensembles publicly available
+via ILDG as soon as possible.
+
 %\emptylines{19}
 
 \subsection{ETMC}
@@ -662,7 +699,7 @@ of the data policies are under discussion within the collaboration.
     QCDSF                        & 1      & P,U  & 24    & 20,000  & 55           \\
 %    RBC-UKQCD                    &        &      &       &         &              \\
     OpenLat                      & 2      & U    & 12    & 40,000  & 500          \\
-%    RC*                          &        &      &       &         &              \\
+    RC$^\star$                   & 1      & P    & 14    & 28,000  & 60           \\
     ETMC                         & 1      & P,U  & 24    & 12,000  & 3,000        \\
     JLQCD                        & 1      & P    & 260   & 37,000  & 15           \\
     MILC                         & 1      & I    & 50    & 70,000  & 600          \\
