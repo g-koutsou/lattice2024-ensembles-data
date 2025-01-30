@@ -37,9 +37,9 @@
 %\author*[k,11]{Robert~Mawhinney}  \affiliation[k]{Physics Department, Columbia University, USA}
 \author*[k,11]{Agostino~Patella}    \affiliation[k]{Humboldt Universit\"at zu Berlin, Institut f\"ur Physik \& IRIS, Germany}
 \author*[i,12]{Giovanni Pederiva}   
-%\author*[m,14]{Christian Schmidt}    \affiliation[m]{Fakult\"at f\"ur Physik, Universit\"at Bielefeld, Germany}
-\author*[l,13]{Takeshi Yamazaki}   \affiliation[l]{Institute of Pure and Applied Sciences, University of Tsukuba, Japan}
-\author*[m,14]{Yi-Bo~Yang}    \affiliation[m]{CAS Key Laboratory of Theoretical Physics, Institute of Theoretical Physics, Chinese Academy of Sciences, Beijing 100190, China}
+\author*[l,13]{Christian Schmidt}    \affiliation[l]{Fakult\"at f\"ur Physik, Universit\"at Bielefeld, Germany}
+\author*[m,14]{Takeshi Yamazaki}   \affiliation[m]{Institute of Pure and Applied Sciences, University of Tsukuba, Japan}
+\author*[n,15]{Yi-Bo~Yang}    \affiliation[n]{CAS Key Laboratory of Theoretical Physics, Institute of Theoretical Physics, Chinese Academy of Sciences, Beijing 100190, China}
 
 \note[1]{For the TELOS collaboration}
 \note[2]{For the FASTSUM collaboration}
@@ -54,9 +54,9 @@
 %\note[11]{For the RBC-UKQCD collaboration}
 \note[11]{For the RC$^\star$ collaboration}
 \note[12]{For the OpenLat initiative}
-%\note[14]{For the HotQCD collaboration}
-\note[13]{For the PACS collaboration}
-\note[14]{For the CLQCD collaboration}
+\note[13]{For the HotQCD collaboration}
+\note[14]{For the PACS collaboration}
+\note[15]{For the CLQCD collaboration}
 
 \note[\#]{Conveners}
 
@@ -132,7 +132,7 @@ during the same session and can be found in a separate proceedings
 contribution~\cite{ILDG2}.
 
 In the remainder of these proceedings, we present the status of
-ensemble generation of the 14 collaborations that contributed to this
+ensemble generation of the 15 collaborations that contributed to this
 proceedings contribution. The ensembles reported were generated using
 \Nf{2}{1}, \Nf{2}{1}{1}, and \Nf{1}{1}{1}{1} sea-quark flavors with
 various fermion discretizations. The contributors were asked to
@@ -210,7 +210,38 @@ constitute about 3.5 PB of data. They are available to USQCD mambers
 for non-competitive calculations.
 
 %\newpage
-%\subsection{HotQCD}
+\subsection{HotQCD}
+The HotQCD collaboration generates finite temperature ensembles, using
+highly improved staggered quarks with a tree level improved Symanzik
+gauge action (HISQ/tree). The majority of the ensembles are with
+(2+1)-flavor of dynamical quark at the physical point, i.e. two
+degenerate light quarks ($m_l$) and one heavier strange quark, with a
+fixed ratio of $m_l/m_s=1/27$. Here we have $\mathcal{O}(10)$
+different temperatures and lattices with aspect ratio
+$N_\sigma/N_\tau=4$ and $N_\tau=8,12,16$. These ensembles have been
+produced with high statistics for the Taylor expansion of the pressure
+at finite baryon chemical potential \cite{Bollweg:2021vqf,
+  Bollweg:2022fqq}. In addition we have large lattices with
+$m_l/m_s=1/5, 1/20$, $N_\sigma=80,96,127$, $N_\tau=20,22,24,28,32,36$
+and $T=195, 220, 251, 293$ MeV, for the calculation of spectral
+functions and transport coefficients
+\cite{Altenkort:2023eav,Altenkort:2023oms}. Finally we have ensembles
+at lighter then physical quark masses: $m_l/m_s=1/40,1/60,1/80,1/160$,
+to study the chiral phase transition \cite{Ding:2024sux,
+  HotQCD:2019xnw}. Here we increase the aspect ratio with decreasing
+quark mass in order to keep the finite size effects under
+control. There is also a limited number of ensembles with three and 5
+degenerate HISQ fermions, generated for a study of the Columbia plot
+\cite{Dini:2021hug,Karsch:2022yka}.  The lattices have been generated
+using the SIMULATeQCD code \cite{HotQCD:2023ghu}, using a Rational
+Hybrid Monte Carlo (RHMC) with a 3-level leap-frog or Omelyan
+integrator. The step sizes of light, strange and gauge force
+integrators are tuned to a meet an acceptance of ~70\%. The trajectory
+is usually between 0.5 and 1.0 time units. The configurations are
+stored in a compressed fp32 format and sum up to $~1,500$ TB. We plan
+to upload these ensembles to ILDG 2.0, which is however subject to the
+available storage space.
+
 %\emptylines{19}
 
 \subsection{FASTSUM}
@@ -692,7 +723,7 @@ of the data policies are under discussion within the collaboration.
     Collaboration                & Public & ILDG & \#ens & \#cfg   & Storage (TB) \\\hline
     CLQCD                        & 1      & I    & 20    & 10,000  & 100          \\
     Jlab/W\&M/LANL/MIT/Marseille & 0      & N    & 13    & 10,000  & 3,500        \\
-%    HotQCD                       &        &      &       &         &              \\
+    HotQCD                       & 2,1    & P    & 70    & 15,000,000        & 1,500             \\
     FASTSUM                      & 2,1    & I    & 37    & 37,000  & 65           \\
     TELOS                        & 1      & P    & 250   & 800,000 & 120          \\
     HAL QCD                      & 1      & P    &  1    &  8,000  & 400          \\
@@ -790,15 +821,22 @@ Fund and the Republic of Cyprus through the Research and Innovation
 Foundation and the AQTIVATE a Marie Sk\l{}odowska-Curie Doctoral
 Network GA~No.~101072344.  G.~P. acknowledges funding by the Deutsche
 Forschungsgemeinschaft (DFG, German Research Foundation) - project
-number 460248186 (PUNCH4NFDI). T.~Y.  acknowledges Grants-in-Aid for
-Scientific Research from the Ministry of Education, Culture, Sports,
-Science and Technology (No. 19H01892, 23H01195, 23K25891), MEXT as
-``Program for Promoting Researches on the Supercomputer Fugaku''
-(JPMXP1020230409) and support from computational resources through the
-HPCI System Research Project (Project IDs: hp170022, hp180051,
-hp180072, hp180126, hp190025, hp190081, hp200062, hp200167, hp210112,
-hp220079, hp230199, hp240207). Y.-B.~Y. is supported in part by NSFC
-grants No.~12293060, and~12435002.
+number 460248186 (PUNCH4NFDI). The work of C.~S. is supported by the
+European Union's Horizon 2020 research and innovation program under
+the Marie Sklodowska-Curie Grant Agreement
+No. H2020-MSCAITN-2018-813942 (EuroPLEx), by The Deutsche
+Forschungsgemeinschaft (DFG, German Research Foundation) - Project
+No. 315477589-TRR 211 and the PUNCH4NFDI consortium supported by the
+Deutsche Forschungsgemeinschaft (DFG, German Research
+Foundation). T.~Y.  acknowledges Grants-in-Aid for Scientific Research
+from the Ministry of Education, Culture, Sports, Science and
+Technology (No. 19H01892, 23H01195, 23K25891), MEXT as ``Program for
+Promoting Researches on the Supercomputer Fugaku'' (JPMXP1020230409)
+and support from computational resources through the HPCI System
+Research Project (Project IDs: hp170022, hp180051, hp180072, hp180126,
+hp190025, hp190081, hp200062, hp200167, hp210112, hp220079, hp230199,
+hp240207). Y.-B.~Y. is supported in part by NSFC grants No.~12293060,
+and~12435002.
 
 The participating collaborations acknowledge the following HPC systems
 and HPC sites for the generation of the gauge ensembles reported here,
