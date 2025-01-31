@@ -16,5 +16,6 @@ Authors:
 - G. Koutsou
 - A. Patella
 - G. Pederiva
+- C. Schmidt
 - T. Yamazaki
 - Y.-B. Yang
