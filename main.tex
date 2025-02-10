@@ -2,6 +2,24 @@
 % data according to the instructions in PoSauthmanual.pdf
 \documentclass[a4paper,11pt]{article}
 \usepackage{pos}
+\usepackage[backend=biber,natbib=true,sorting=none]{biblatex}
+\addbibresource{refs.bib}
+\DeclareFieldFormat{postnote}{#1}
+\DeclareFieldFormat{multipostnote}{#1}
+\DeclareFieldFormat{pages}{#1}
+\DeclareFieldFormat[article]{title}{\mkbibemph{#1}}
+\renewbibmacro{in:}{}
+
+\usepackage{xpatch}
+\xpatchbibdriver{article}
+  {\usebibmacro{title}%
+   \newunit}
+  {\usebibmacro{title}%
+   \printunit{\addcomma\space}}
+  {}
+  {}
+
+
 \usepackage{enumitem}
 \usepackage{lineno}[pagewise]
 \usepackage{forloop}
@@ -165,7 +183,7 @@ $\in(0,464]$~MeV. In addition, there are several anisotropic ensembles
   pion mass, volume and flavors which concentrate on the high
   precision studies related to glueball properties. For the gauge
   generation the Chroma package~\cite{Edwards:2004sx} with
-  QUDA~\cite{Clark:2009wm,Babich:2011np,Clark:2016rdz} is used at
+  QUDA~\cite{Clark:2009wm,10.1145/2063384.2063478,7877146} is used at
   present, and we plan to switch to PyQUDA~\cite{Jiang:2024lto} with
   QUDA in the near future. Currently the CLQCD collaboration has
   $\sim$20 ensembles (one ensemble corresponds to one point in the
@@ -559,7 +577,7 @@ in the light sector while mixed-precision CG is used
 elsewhere. Multi-shift CG is used together with shift-by-shift
 refinement using DD-$\alpha$AMG~\cite{Alexandrou:2018wiv} for a number
 of small shifts for the heavy sector. tmLQCD has interfaces to
-QPhiX~\cite{Joo:2013lwm} and QUDA~\cite{Clark:2009wm,Babich:2011np}.
+QPhiX~\cite{Joo:2013lwm} and QUDA~\cite{Clark:2009wm,10.1145/2063384.2063478}.
 tmLQCD automatically writes gauge configurations in the ILDG format,
 with meta-data including creation date, target simulation parameters,
 and the plaquette. ETMC policy is to make ensembles publicly
@@ -901,6 +919,7 @@ and HPC sites for the generation of the gauge ensembles reported here,
 \end{itemize}
 
 
-\bibliographystyle{JHEP} \bibliography{refs}
+%\bibliographystyle{JHEP} \bibliography{refs}
+\printbibliography
 
 \end{document}
