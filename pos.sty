@@ -21,7 +21,7 @@
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
 
-%\newif\ifnatbibsort\natbibsorttrue\DeclareOption{no-natbib-sort}{\natbibsortfalse}
+\newif\ifnatbibsort\natbibsorttrue\DeclareOption{no-natbib-sort}{\natbibsortfalse}
 \ProcessOptions\relax
 
 \RequirePackage{newtxtext}
@@ -34,7 +34,7 @@
 \RequirePackage[zerostyle=e]{newtxtt}
 \RequirePackage{amsmath}
 \RequirePackage{graphicx}
-%\ifnatbibsort\RequirePackage[numbers,sort&compress]{natbib}\else\RequirePackage[numbers,compress]{natbib}\fi
+\ifnatbibsort\RequirePackage[numbers,sort&compress]{natbib}\else\RequirePackage[numbers,compress]{natbib}\fi
 \RequirePackage[font=small,labelfont=bf]{caption}
 \RequirePackage{xcolor}
 \definecolor{posurl}{cmyk}{.9 .9 0 0}
