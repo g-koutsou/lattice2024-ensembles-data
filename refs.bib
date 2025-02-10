@@ -4,7 +4,7 @@
     journal = "PoS",
     volume = "LATTICE2024",
     pages = "411",
-    year = "2024"
+    year = "2025"
 }
 
 @article{Bali:2022mlg,
@@ -148,17 +148,22 @@
     year = "2010"
 }
 
-@inproceedings{Babich:2011np,
-    author = "Babich, R. and Clark, M. A. and Joo, B. and Shi, G. and Brower, R. C. and Gottlieb, S.",
-    collaboration = "QUDA",
-    title = "{Scaling lattice QCD beyond 100 GPUs}",
-    booktitle = "{International Conference for High Performance Computing, Networking, Storage and Analysis}",
-    eprint = "1109.2935",
-    archivePrefix = "arXiv",
-    primaryClass = "hep-lat",
-    doi = "10.1145/2063384.2063478",
-    month = "9",
-    year = "2011"
+@article{Babich:2011np,
+author = {Babich, R. and Clark, M. A. and Jo\'{o}, B. and Shi, G. and Brower, R. C. and Gottlieb, S.},
+title = {Scaling lattice QCD beyond 100 GPUs},
+year = {2011},
+isbn = {9781450307710},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+journal = {Proceedings of 2011 International Conference for High Performance Computing, Networking, Storage and Analysis},
+doi = {10.1145/2063384.2063478},
+url = {https://doi.org/10.1145/2063384.2063478},
+abstract = {Over the past five years, graphics processing units (GPUs) have had a transformational effect on numerical lattice quantum chromodynamics (LQCD) calculations in nuclear and particle physics. While GPUs have been applied with great success to the post-Monte Carlo "analysis" phase which accounts for a substantial fraction of the workload in a typical LQCD calculation, the initial Monte Carlo "gauge field generation" phase requires capability-level supercomputing, corresponding to O(100) GPUs or more. Such strong scaling has not been previously achieved. In this contribution, we demonstrate that using a multi-dimensional parallelization strategy and a domain-decomposed preconditioner allows us to scale into this regime. We present results for two popular discretizations of the Dirac operator, Wilson-clover and improved staggered, employing up to 256 GPUs on the Edge cluster at Lawrence Livermore National Laboratory.},
+volume = {70},
+pages = {11},
+keywords = {GPU, Krylov solvers, domain decomposition, lattice QCD},
+location = {Seattle, Washington},
+series = {SC '11}
 }
 
 @article{ETM:2009ztk,
@@ -301,7 +306,7 @@
 	doi = {10.1038/sdata.2016.18},
 	id = {Wilkinson2016},
 	isbn = {2052-4463},
-	journal = {Scientific Data},
+	journal = {Sci. Data},
 	number = {1},
 	pages = {160018},
 	title = {The FAIR Guiding Principles for scientific data management and stewardship},
@@ -522,13 +527,13 @@
   month        = jul,
   year         = 2024,
   publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.8403827},
+  doi          = {\href{https://doi.org/10.5281/zenodo.8403827}{10.5281/zenodo.8403827}},
   url          = {https://doi.org/10.5281/zenodo.8403827}
 }
 
 @misc{zenodo,
-  doi = {10.25495/7GXK-RD71},
-  url = {https://www.zenodo.org/},
+  doi = {\href{https://www.zenodo.org/}{10.25495/7GXK-RD71}},
+  url = {\url{https://www.zenodo.org/}},
   author = {{European Organization For Nuclear Research} and {OpenAIRE}},
   keywords = {FOS: Physical sciences, Publication, Dataset},
   language = {en},
@@ -575,7 +580,7 @@
   note         = {},
   publisher    = {Zenodo},
   version      = {v1.0},
-  doi          = {10.5281/zenodo.2216355},
+  doi          = {\href{https://doi.org/10.5281/zenodo.2216355}{10.5281/zenodo.2216355}},
   url          = {https://doi.org/10.5281/zenodo.2216355},
   howpublished = {\url{https://gitlab.com/fastsum}},
 }
@@ -612,7 +617,7 @@
       author         = "Edwards, Robert G. and Joó, Balint",
       title          = "{The Chroma software system for lattice QCD}",
       collaboration  = "SciDAC, LHPC, UKQCD",
-      journal        = "Nucl. Phys. Proc. Suppl.",
+      journal        = "Nucl. Phys. B Proc. Suppl.",
       volume         = "140",
       pages          = "832",
       doi            = "10.1016/j.nuclphysbps.2004.11.254",
@@ -717,6 +722,9 @@
     author = "Bazavov, A. and others",
     collaboration = "MILC",
     title = "{Nonperturbative QCD Simulations with 2+1 Flavors of Improved Staggered Quarks}",
+    eprint = "0903.3598",
+    archivePrefix = "arXiv",
+    primaryClass = "hep-lat",
     reportNumber = "FERMILAB-PUB-09-674-T",
     doi = "10.1103/RevModPhys.82.1349",
     journal = "Rev. Mod. Phys.",
@@ -773,6 +781,7 @@
     author = "Bazavov, A. and others",
     collaboration = "MILC",
     title = "{Lattice QCD Ensembles with Four Flavors of Highly Improved Staggered Quarks}",
+    eprint = "1212.4768",
     archivePrefix = "arXiv",
     primaryClass = "hep-lat",
     reportNumber = "FERMILAB-PUB-12-796-T",
@@ -781,8 +790,7 @@
     volume = "87",
     number = "5",
     pages = "054505",
-    year = "2013",
-    url = {https://doi.org/10.1103/PhysRevD.87.054505}
+    year = "2013"
 }
 
 
@@ -791,19 +799,18 @@
   howpublished = {\url{https://github.com/milc-qcd/sharing/wiki/LatticeSharing}}
   }
 
-@inproceedings{Clark:2016rdz,
-    author = "Clark, M. A. and Jo\'o, B\'alint and Strelchenko, Alexei and Cheng, Michael and Gambhir, Arjun and Brower, Richard. C.",
-    collaboration = "QUDA",
-    title = "{Accelerating lattice QCD multigrid on GPUs using fine-grained parallelization}",
-    booktitle = "{International Conference for High Performance Computing, Networking, Storage and Analysis}",
-    eprint = "1612.07873",
-    archivePrefix = "arXiv",
-    primaryClass = "hep-lat",
-    reportNumber = "FERMILAB-CONF-16-638-CD",
-    doi = "10.5555/3014904.3014995",
-    month = "12",
-    year = "2016"
-    }
+
+@article{Clark:2016rdz,
+  author={Clark, M. A. and Joó, Bálint and Strelchenko, Alexei and Cheng, Michael and Gambhir, Arjun and Brower, Richard. C.},
+  journal={SC '16: Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis}, 
+  title={Accelerating Lattice QCD Multigrid on GPUs Using Fine-Grained Parallelization}, 
+  year={2016},
+  volume={},
+  number={},
+  pages={795-806},
+  keywords={Parallel processing;Lattices;Acceleration;Electronic mail;Color;Throughput},
+  doi={10.1109/SC.2016.67}
+  }
 
 @article{Jiang:2024lto,
     author = "Jiang, Xiangyu and Shi, Chunjiang and Chen, Ying and Gong, Ming and Yang, Yi-Bo",
@@ -951,7 +958,7 @@
     number = "1",
     pages = "014510",
     year = "2019",
-    note = "[Erratum: Phys.Rev.D 102, 019902 (2020)]"
+    note = "[Erratum: \href{https://doi.org/10.1103/PhysRevD.102.019902}{\textit{Phys.~Rev.~D}~\textbf{102} (2020) 019902}]"
 }
 
 @article{Tsuji:2023llh,
@@ -1224,7 +1231,7 @@
 	author = {Isabel Campos and Patrick Fritzsch and Martin Hansen and Marina Krstić Marinković and Agostino Patella and Alberto Ramos and Nazario Tantalo},
 	title = {openQ*D},
 	year = {2018},
-	doi = {10.20350/digitalCSIC/8591},	
+	doi = {\href{https://doi.org/10.20350/digitalCSIC/8591}{10.20350/digitalCSIC/8591}},	
 }
 
 
@@ -1295,6 +1302,7 @@
     journal = "Phys. Rev. D",
     volume = "104",
     number = "7",
+    pages = "074512",
     year = "2021"
 }
 @article{Bollweg:2022fqq,
@@ -1327,7 +1335,7 @@
 @article{HotQCD:2019xnw,
     author = "Ding, H. T. and others",
     collaboration = "HotQCD",
-    title = "{Chiral Phase Transition Temperature in ( 2+1 )-Flavor QCD}",
+    title = "{Chiral Phase Transition Temperature in (2+1)-Flavor QCD}",
     eprint = "1903.04801",
     archivePrefix = "arXiv",
     primaryClass = "hep-lat",
